@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Checkbox, Label, CheckboxGroup } from '@tarojs/components'
 import classnames from 'classnames'
 
-import TodoTextInput from './TodoTextInput'
+import TodoTextInput from '../input/TodoTextInput'
 
 export default class TodoItem extends Component {
   state = {
@@ -53,7 +53,7 @@ export default class TodoItem extends Component {
         <View className='view'>
           <CheckboxGroup onChange={this.handleCompleteTodo.bind(this, todo)}>
             <Label className='checkbox'>
-              <Checkbox checked={todo.completed}/>{todo.text}
+              <Checkbox checked={todo.completed} />{todo.text}
             </Label>
           </CheckboxGroup>
           <View className='destroy' onClick={this.handleDeleteTodo.bind(this, todo)} />

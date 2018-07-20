@@ -1,6 +1,6 @@
 {
 	"miniprogramRoot": "./dist",
-	"projectname": "open-todo",
+	"projectname": "todomvc",
 	"description": "todo-list",
 	"appid": "touristappid",
 	"setting": {

@@ -2,11 +2,11 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
-import TodoTextInput from '../components/TodoTextInput'
-import FilterLink from './FilterLink'
-import { addTodo } from '../actions'
+import TodoTextInput from '../../components/input/TodoTextInput'
+import FilterLink from '../f/FilterLink'
+import { addTodo } from '../../actions'
 
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
+import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/TodoFilters'
 
 const FILTER_TITLES = {
   [SHOW_ALL]: 'All',
@@ -44,7 +44,8 @@ export default class Header extends Component {
         <TodoTextInput
           newTodo
           onSave={this.onSaveHandler}
-          placeholder='What needs to be done?' />
+          placeholder='What needs to be done?'
+        />
       </View>
     )
   }
