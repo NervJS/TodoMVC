@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Checkbox, Label, CheckboxGroup } from '@tarojs/components'
 import classnames from 'classnames'
 
-import TodoTextInput from './TodoTextInput'
+import TodoTextInput from '../TodoTextInput/TodoTextInput'
 
 export default class TodoItem extends Component {
   state = {

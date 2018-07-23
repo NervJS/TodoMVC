@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 
-import Header from '../../containers/Header'
-import MainSection from '../../containers/MainSection'
+import Header from '../../containers/Header/Header'
+import MainSection from '../../containers/MainSection/MainSection'
 
 import './index.scss'
 

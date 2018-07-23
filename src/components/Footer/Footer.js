@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-import classnames from 'classnames'
+
+import './Footer.scss'
 
 export default class Footer extends Component {
 

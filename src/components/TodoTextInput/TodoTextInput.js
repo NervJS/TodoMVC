@@ -2,6 +2,8 @@ import Taro, { Component } from '@tarojs/taro'
 import classnames from 'classnames'
 import { Input } from '@tarojs/components'
 
+import './TodoTextInput.scss'
+
 export default class TodoTextInput extends Component {
   state = {
     text: this.props.text || ''
@@ -35,7 +37,7 @@ export default class TodoTextInput extends Component {
     }
   }
 
-  render() {
+  render () {
     return (
       <Input className={
         classnames({

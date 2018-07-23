@@ -3,8 +3,10 @@ import Taro, { Component } from '@tarojs/taro'
 import { Text } from '@tarojs/components'
 import classnames from 'classnames'
 
-import { setVisibilityFilter } from '../actions'
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
+import { setVisibilityFilter } from '../../actions'
+import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/TodoFilters'
+
+import './FilterLink.scss'
 
 const FILTER_TITLES = {
   [SHOW_ALL]: 'All',

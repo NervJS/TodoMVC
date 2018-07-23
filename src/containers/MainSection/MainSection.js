@@ -3,10 +3,12 @@ import { View, CheckboxGroup, Checkbox, Label } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { bindActionCreators } from 'redux'
 
-import * as TodoActions from '../actions'
-import Footer from '../components/Footer'
-import TodoList from './TodoList'
-import { getCompletedTodoCount } from '../selectors'
+import * as TodoActions from '../../actions'
+import Footer from '../../components/Footer/Footer'
+import TodoList from '../TodoList/TodoList'
+import { getCompletedTodoCount } from '../../selectors'
+
+import './MainSection.scss'
 
 const mapStateToProps = state => ({
   todosCount: state.todos.length,

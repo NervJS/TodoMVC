@@ -2,18 +2,19 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
-import TodoTextInput from '../components/TodoTextInput'
-import FilterLink from './FilterLink'
-import { addTodo } from '../actions'
+import TodoTextInput from '../../components/TodoTextInput/TodoTextInput'
+import FilterLink from '../FilterLink/FilterLink'
+import { addTodo } from '../../actions'
 
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
+import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/TodoFilters'
+
+import './Header.scss'
 
 const FILTER_TITLES = {
   [SHOW_ALL]: 'All',
   [SHOW_ACTIVE]: 'Active',
   [SHOW_COMPLETED]: 'Completed'
 }
-
 
 @connect(
   () =>({}),
@@ -25,9 +26,10 @@ const FILTER_TITLES = {
 )
 export default class Header extends Component {
   onSaveHandler = (text) => {
-    if (text.length !== 0) {
-      this.props.addTodo(text)
-    }
+    console.log(this.props)
+    // if (text.length !== 0) {
+    //   this.props.addTodo(text)
+    // }
   }
 
   render () {
