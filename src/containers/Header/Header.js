@@ -26,10 +26,9 @@ const FILTER_TITLES = {
 )
 export default class Header extends Component {
   onSaveHandler = (text) => {
-    console.log(this.props)
-    // if (text.length !== 0) {
-    //   this.props.addTodo(text)
-    // }
+    if (text.length !== 0) {
+      this.props.addTodo(text)
+    }
   }
 
   render () {
@@ -46,7 +45,8 @@ export default class Header extends Component {
         <TodoTextInput
           newTodo
           onSave={this.onSaveHandler}
-          placeholder='What needs to be done?' />
+          placeholder='What needs to be done?'
+        />
       </View>
     )
   }
