@@ -14,7 +14,7 @@ const FILTER_TITLES = {
   [SHOW_COMPLETED]: 'Completed'
 }
 
-const mapStateToProps = ({ visibilityFilter }) => ({
+const mapStateToProps = ({visibilityFilter}) => ({
   visibilityFilter
 })
 
@@ -30,17 +30,17 @@ const mapDispatchToProps = (dispatch) => ({
 )
 export default class FilterLink extends Component {
   onClickHandler = () => {
-    console.log('onClickHandler')
+    console.log('onClickHandler', this.props.filter)
     this.props.setFilter(this.props.filter)
   }
 
   render () {
-    const { filter, visibilityFilter } = this.props
+    const {filter, visibilityFilter} = this.props
     const text = FILTER_TITLES[filter]
     const active = visibilityFilter === filter
     return (
       <Text
-        className={classnames({ 'filters-link': true, 'selected': active })}
+        className={classnames({'filters-link': true, 'selected': active})}
         onClick={this.onClickHandler}>
         {text}
       </Text>
