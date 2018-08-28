@@ -1,30 +1,3 @@
-.new-todo,
-.edit {
-  position: relative;
-  margin: 0;
-  width: 100%;
-  font-size: 48px;
-  height: 130px;
-  line-height: 130px;
-  //color: inherit;
-  padding: 12px;
-  border: 2px solid #999;
-  //box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
-  //box-sizing: border-box;
-  //-webkit-font-smoothing: antialiased;
-  //-moz-osx-font-smoothing: grayscale;
-}
-
-.new-todo {
-  //padding: 32px 32px 32px 120px;
-  //border: none;
-  font-style: italic;
-  font-weight: 300;
-  color: #e6e6e6;
-  background: rgba(0, 0, 0, 0.003);
-  //box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
-}
-
 /*postcss-pxtransform rn eject enable*/
 
 .test {
@@ -33,19 +6,26 @@
 
 /*postcss-pxtransform rn eject disable*/
 
-.text {
-  font-size: 20px;
+.new-todo,
+.edit {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-size: 48px;
+  height: 130px;
+  line-height: 130px;
+  padding: 12px;
+  border: 2px solid #999;
+  //box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  //box-sizing: border-box;
 }
 
-
-/*postcss-pxtransform rn eject enable*/
-
-.test123 {
-  color: black;
+.new-todo {
+  padding: 32px 32px 32px 120px;
+  font-style: italic;
+  font-weight: 300;
+  color: #e6e6e6;
+  background: rgba(0, 0, 0, 0.003);
+  //box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
 }
 
-/*postcss-pxtransform rn eject disable*/
-
-.text321 {
-  font-size: 20px;
-}
