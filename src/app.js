@@ -1,14 +1,18 @@
 import Taro, { Component } from '@tarojs/taro'
 import '@tarojs/async-await'
 import { Provider } from '@tarojs/redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 import reducer from './reducers'
 import Index from './pages/index'
 
 import './app.scss'
 
-const store = createStore(reducer)
+const store = createStore(reducer, composeWithDevTools(
+  applyMiddleware()
+  // other store enhancers if any
+))
 
 class App extends Component {
   config = {
@@ -34,10 +38,10 @@ class App extends Component {
   render () {
     return (
       <Provider store={store}>
-        <Index />
+        <Index/>
       </Provider>
     )
   }
 }
 
-Taro.render(<App />, document.getElementById('app'))
+Taro.render(<App/>, document.getElementById('app'))

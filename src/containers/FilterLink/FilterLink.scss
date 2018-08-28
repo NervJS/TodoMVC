@@ -1,16 +1,17 @@
 .filters-link {
-	color: inherit;
-	margin: 6px;
-	padding: 6px 14px;
-	text-decoration: none;
-	border: 2px solid transparent;
-	border-radius: 6px;
+  //color: inherit;
+  margin: 6px;
+  padding: 6px 14px;
+  text-decoration: none;
+  //border: 2px solid transparent;
+  border-radius: 6px;
 }
 
 .filters-link:hover {
-	border-color: rgba(175, 47, 47, 0.1);
+  //border-color: rgba(175, 47, 47, 0.1);
 }
 
-.filters-link.selected {
-	border-color: rgba(175, 47, 47, 0.2);
+.selected {
+  //border-color: rgba(175, 47, 47, 0.2);
+  border-left-width: 1px;
 }

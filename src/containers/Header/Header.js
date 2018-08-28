@@ -34,7 +34,9 @@ export default class Header extends Component {
   render () {
     return (
       <View className='header'>
-        <View className='title'>todos</View>
+        <View>
+          <Text className='title'>todos</Text>
+        </View>
         <View className='filters'>
           {Object.keys(FILTER_TITLES).map(filter =>
             <View key={filter} className='filters-item'>

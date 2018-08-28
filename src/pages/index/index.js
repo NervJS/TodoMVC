@@ -23,7 +23,7 @@ class Index extends Component {
 
   render () {
     return (
-      <View className='todoapp'>
+      <View className='todaoapp'>
         <Header />
         <MainSection />
       </View>

@@ -1,6 +1,6 @@
 .list-item {
 	position: relative;
-	font-size: 48px;
+	//font-size: 48px;
   border-bottom: 2px solid #ededed;
   height: 116px;
 }
@@ -26,7 +26,7 @@
 }
 
 .list-item .toggle {
-	text-align: center;
+	//text-align: center;
 	width: 40px;
 	/* auto, since non-WebKit browsers doesn't support input styling */
 	height: auto;
@@ -79,7 +79,7 @@
 	width: 80px;
 	height: 80px;
 	margin: auto 0;
-	font-size: 60px;
+	//font-size: 60px;
 	color: #cc9a9a;
 	margin-bottom: 22px;
 	transition: color 0.2s ease-out;

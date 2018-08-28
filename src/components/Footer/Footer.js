@@ -14,16 +14,21 @@ export default class Footer extends Component {
     const itemWord = activeCount === 1 ? 'item' : 'items'
     return (
       <View className='footer'>
-        <Text className='todo-count'>
-          {activeCount || 'No'}{' '}{itemWord} left
-        </Text>
-        {
-          !!completedCount &&
-          <View
-            className='clear-completed'
-            onClick={this.onClearCompletedHandler}
-          >Clear completed</View>
-        }
+        <View className='footer-content'>
+          <Text className='todo-count'>
+            {activeCount || 'No'}{' '}{itemWord} left
+          </Text>
+          {
+            !!completedCount &&
+            <View
+              className='clear-completed'
+              onClick={this.onClearCompletedHandler}
+            >
+              <Text className='clear-completed-text'>Clear completed</Text>
+            </View>
+          }
+        </View>
+        <View className='footer-shadow'/>
       </View>
     )
   }

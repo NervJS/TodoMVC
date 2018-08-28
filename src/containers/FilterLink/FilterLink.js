@@ -30,6 +30,7 @@ const mapDispatchToProps = (dispatch) => ({
 )
 export default class FilterLink extends Component {
   onClickHandler = () => {
+    console.log('onClickHandler')
     this.props.setFilter(this.props.filter)
   }
 
@@ -39,7 +40,7 @@ export default class FilterLink extends Component {
     const active = visibilityFilter === filter
     return (
       <Text
-        className={classnames({ 'filters-link': true, selected: active })}
+        className={classnames({ 'filters-link': true, 'selected': active })}
         onClick={this.onClickHandler}>
         {text}
       </Text>
