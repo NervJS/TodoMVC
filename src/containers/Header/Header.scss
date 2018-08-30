@@ -1,30 +1,37 @@
 .title {
-	width: 100%;
-	font-size: 100px;
-	font-weight: 100;
-	text-align: center;
-	color: rgba(175, 47, 47, 0.55);
-	//-webkit-text-rendering: optimizeLegibility;
-	//-moz-text-rendering: optimizeLegibility;
-	//text-rendering: optimizeLegibility;
+  width: 100%;
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  color: rgba(175, 47, 47, 0.55);
+  background-color: #F5F5F5;
+  //-webkit-text-rendering: optimizeLegibility;
+  //-moz-text-rendering: optimizeLegibility;
+  //text-rendering: optimizeLegibility;
+}
+
+.textinput-wrap {
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #999;
+  //box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.textinput-wrap-icon {
+  font-size: 44px;
+  color: #e6e6e6;
+  padding: 20px 54px 20px 54px;
+  transform: rotate(90deg);
+  //box-shadow: 0 0 0 white;
 }
 
 .filters {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
   flex-direction: row;
-	//list-style: none;
-	//position: absolute;
-	//right: 0;
-  //left: 0;
-  //top: -60px;
+  background-color: #F5F5F5;
 }
 
 .filters-item {
 }
 
-//@media (max-width: 430px) {
-//	.filters {
-//		bottom: 10px;
-//	}
-//}

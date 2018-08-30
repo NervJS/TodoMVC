@@ -6,11 +6,12 @@ import './Footer.scss'
 export default class Footer extends Component {
 
   onClearCompletedHandler = () => {
+    console.log('onClearCompletedHandler')
     this.props.onClearCompleted()
   }
 
   render () {
-    const { activeCount, completedCount } = this.props
+    const {activeCount, completedCount} = this.props
     const itemWord = activeCount === 1 ? 'item' : 'items'
     return (
       <View className='footer'>
@@ -20,11 +21,13 @@ export default class Footer extends Component {
           </Text>
           {
             !!completedCount &&
-            <View
-              className='clear-completed'
-              onClick={this.onClearCompletedHandler}
-            >
-              <Text className='clear-completed-text'>Clear completed</Text>
+            <View className='clear-completed'>
+              <Text
+                className='clear-completed-text'
+                onClick={this.onClearCompletedHandler}
+              >
+                Clear completed
+              </Text>
             </View>
           }
         </View>

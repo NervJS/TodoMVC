@@ -2,14 +2,13 @@
   margin: 6px;
   padding: 6px 14px;
   text-decoration: none;
-  border-width: 2px;
-  border-style: solid;
-  border-color: transparent;;
+  // transparent 不支持？？ TODO
+  //border: 2px solid transparent;
   border-radius: 6px;
 }
 
 .filters-link:hover {
-  //border-color: rgba(175, 47, 47, 0.1);
+  border-color: rgba(175, 47, 47, 0.1);
 }
 
 .selected {

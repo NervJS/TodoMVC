@@ -36,14 +36,6 @@ export default class MainSection extends Component {
     const { todosCount, completedCount, actions } = this.props
     return (
       <View className='main'>
-        {
-          !!todosCount &&
-          <CheckboxGroup className='checkbox-group' onChange={this.onChangeHandler}>
-            <Label className='toggle-all-label' onClick={this.onCheckClickHandler}>
-              <Checkbox className='toggle-all' checked={completedCount === todosCount} />
-            </Label>
-          </CheckboxGroup>
-        }
         <TodoList />
         {
           !!todosCount &&

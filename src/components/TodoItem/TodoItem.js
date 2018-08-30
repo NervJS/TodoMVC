@@ -1,8 +1,9 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Checkbox, Label, CheckboxGroup } from '@tarojs/components'
+import { View, Checkbox, Label, CheckboxGroup, Text } from '@tarojs/components'
 import classnames from 'classnames'
 
 import TodoTextInput from '../TodoTextInput/TodoTextInput'
+import './TodoItem.scss'
 
 export default class TodoItem extends Component {
   state = {
@@ -13,14 +14,14 @@ export default class TodoItem extends Component {
     const val = this.state.editText.trim()
     if (val) {
       this.props.onSave(val)
-      this.setState({ editText: val })
+      this.setState({editText: val})
     } else {
       this.props.onDestroy()
     }
   }
 
   handleDoubleClick = () => {
-    this.setState({ editing: true })
+    this.setState({editing: true})
   }
 
   handleSave = (id, text) => {
@@ -29,34 +30,31 @@ export default class TodoItem extends Component {
     } else {
       this.props.oneditTodo(id, text)
     }
-    this.setState({ editing: false })
+    this.setState({editing: false})
   }
 
   handleCompleteTodo = (todo) => {
+    console.log('handleCompleteTodo')
     this.props.oncompleteTodo(todo.id)
   }
 
-  handleDeleteTodo = (todo) => {
-    this.props.ondeleteTodo(todo.id)
-  }
-
   render () {
-    const { todo } = this.props
+    const {todo} = this.props
 
     let element
     if (this.state.editing) {
       element = (
-        <TodoTextInput text={todo.text} editing={this.state.editing} onSave={this.handleSave.bind(this, todo.id)} />
+        <TodoTextInput text={todo.text} editing={this.state.editing} onSave={this.handleSave.bind(this, todo.id)}/>
       )
     } else {
       element = (
         <View className='view'>
           <CheckboxGroup onChange={this.handleCompleteTodo.bind(this, todo)}>
-            <Label className='checkbox'>
-              <Checkbox checked={todo.completed} />{todo.text}
+            <Label className='checkbox-label'>
+              <Checkbox className='checkbox' checked={todo.completed}/>
+              <Text style={{color: '#4d4d4d'}}>{todo.text}</Text>
             </Label>
           </CheckboxGroup>
-          <View className='destroy' onClick={this.handleDeleteTodo.bind(this, todo)} />
         </View>
       )
     }
