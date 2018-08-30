@@ -4,17 +4,21 @@
   font-weight: 100;
   text-align: center;
   color: rgba(175, 47, 47, 0.55);
-  background-color: #F5F5F5;
   //-webkit-text-rendering: optimizeLegibility;
   //-moz-text-rendering: optimizeLegibility;
   //text-rendering: optimizeLegibility;
 }
 
+.header-title-wrap {
+  display: flex;
+  background-color: #F5F5F5;
+}
+
 .textinput-wrap {
+  display: flex;
   flex-direction: row;
   align-items: center;
-  border: 1px solid #999;
-  //box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e6e6e6;
 }
 
 .textinput-wrap-icon {
@@ -22,10 +26,11 @@
   color: #e6e6e6;
   padding: 20px 54px 20px 54px;
   transform: rotate(90deg);
-  //box-shadow: 0 0 0 white;
 }
 
 .filters {
+  display: flex;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   flex-direction: row;
@@ -33,5 +38,6 @@
 }
 
 .filters-item {
+  margin: 6px;
 }
 

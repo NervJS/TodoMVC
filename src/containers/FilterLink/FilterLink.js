@@ -41,7 +41,8 @@ export default class FilterLink extends Component {
     return (
       <Text
         className={classnames({'filters-link': true, 'selected': active})}
-        onClick={this.onClickHandler}>
+        onClick={this.onClickHandler}
+      >
         {text}
       </Text>
     )

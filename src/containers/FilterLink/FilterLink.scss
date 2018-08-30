@@ -1,17 +1,17 @@
 .filters-link {
-  margin: 6px;
   padding: 6px 14px;
-  text-decoration: none;
   // transparent 不支持？？ TODO
-  //border: 2px solid transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
   border-radius: 6px;
 }
 
 .filters-link:hover {
-  border-color: rgba(175, 47, 47, 0.1);
+  border-color:  #efd5d5;
 }
 
 .selected {
-  border-color: #AF2F2F;
-  border-width: 1px;
+  border-color:  #efd5d5;
+  border-width: 2px;
 }

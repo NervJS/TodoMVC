@@ -37,7 +37,7 @@ export default class Header extends Component {
   render () {
     return (
       <View className='header'>
-        <View>
+        <View className='header-title-wrap'>
           <Text className='title'>todos</Text>
         </View>
         <View className='filters'>
