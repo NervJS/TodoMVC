@@ -24,6 +24,7 @@ const mapDispatchToProps = dispatch => ({
 )
 export default class Header extends Component {
   onCheckClickHandler = () => {
+    console.log('onCheckClickHandler')
     const {actions} = this.props
     actions.completeAllTodos()
   }

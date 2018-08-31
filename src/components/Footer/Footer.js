@@ -29,7 +29,6 @@ export default class Footer extends Component {
             </Text>
           }
         </View>
-        <View className='footer-shadow'/>
       </View>
     )
   }
