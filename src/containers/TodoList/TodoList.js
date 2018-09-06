@@ -26,6 +26,7 @@ const mapDispatchToProps = dispatch => ({
 export default class TodoList extends Component {
   render () {
     const { filteredTodos, actions } = this.props
+    console.log(filteredTodos)
     return (
       <View className='todo-list'>
         {filteredTodos.map(todo =>
