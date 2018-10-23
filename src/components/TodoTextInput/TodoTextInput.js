@@ -30,6 +30,12 @@ export default class TodoTextInput extends Component {
   }
 
   handleChange = e => {
+    if (Taro.getEnv() === Taro.ENV_TYPE.WEAPP) return
+    console.log('handleChange', e)
+    this.setState({text: e.target.value})
+  }
+
+  handleInput = e => {
     console.log('handleChange', e)
     this.setState({text: e.target.value})
   }
@@ -57,7 +63,9 @@ export default class TodoTextInput extends Component {
         value={this.state.text}
         onBlur={this.handleBlur}
         onChange={this.handleChange}
+        onInput={this.handleInput}
         onKeyDown={this.handleSubmitKey}
+        onConfirm={this.handleSubmit}
       />
     )
   }

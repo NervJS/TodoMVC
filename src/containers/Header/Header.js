@@ -50,11 +50,14 @@ export default class Header extends Component {
         </View>
         <View className='textinput-wrap'>
           <Text className='textinput-wrap-icon' onClick={this.onCheckClickHandler}>❯</Text>
-          <TodoTextInput
-            newTodo
-            onSave={this.onSaveHandler}
-            placeholder='What needs to be done?'
-          />
+          <View className='textinput-wrap-input'>
+            <TodoTextInput
+              className='textinput-wrap-input'
+              newTodo
+              onSave={this.onSaveHandler}
+              placeholder='What needs to be done?'
+            />
+          </View>
         </View>
       </View>
     )
