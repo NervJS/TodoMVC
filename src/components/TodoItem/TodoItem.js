@@ -6,6 +6,10 @@ import TodoTextInput from '../TodoTextInput/TodoTextInput'
 import './TodoItem.scss'
 
 export default class TodoItem extends Component {
+  static defaultProps = {
+    todo: {}
+  }
+
   state = {
     editing: false
   }
