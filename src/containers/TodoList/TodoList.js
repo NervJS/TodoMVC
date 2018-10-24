@@ -33,9 +33,9 @@ export default class TodoList extends Component {
           <TodoItem
             key={todo.id}
             todo={todo}
-            ondeleteTodo={this.props.actions.deleteTodo}
-            oneditTodo={this.props.actions.editTodo}
-            oncompleteTodo={this.props.actions.completeTodo}
+            onDeleteTodo={this.props.actions.deleteTodo}
+            onEditTodo={this.props.actions.editTodo}
+            onCompleteTodo={this.props.actions.completeTodo}
           />
         )}
       </View>
