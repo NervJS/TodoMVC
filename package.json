@@ -8,7 +8,7 @@
     "build:rn": "taro build --type rn",
 		"build:weapp": "taro build --type weapp",
 		"build:h5": "taro build --type h5",
-    "dev:rn": "npm run build:rn -- --watch"
+		"dev:rn": "npm run build:rn -- --watch",
 		"dev:weapp": "npm run build:weapp -- --watch",
 		"dev:h5": "npm run build:h5 -- --watch",
 		"test": "echo \"Error: no test specified\" && exit 1"
