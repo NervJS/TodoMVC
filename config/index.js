@@ -1,3 +1,5 @@
+const wba = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
 const config = {
   projectName: 'todo-list',
   date: '2018-7-9',
@@ -8,7 +10,9 @@ const config = {
     babel: {
       sourceMap: true,
       presets: [
-        'env'
+        ['env', {
+          modules: false
+        }]
       ],
       plugins: [
         'transform-class-properties',
@@ -53,6 +57,11 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ['taro-ui'],
+    webpackChain (chain) {
+      chain.plugin('analyzer')
+        .use(wba, [])
+    },
     module: {
       postcss: {
         autoprefixer: {
