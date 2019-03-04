@@ -6,7 +6,7 @@ import './TodoTextInput.scss'
 
 export default class TodoTextInput extends Component {
   state = {
-    text: this.props.text || ''
+    todoText: this.props.text || ''
   }
 
   handleSubmit = e => {
@@ -14,7 +14,7 @@ export default class TodoTextInput extends Component {
     const text = e.target.value.trim()
     this.props.onSave(text)
     if (this.props.newTodo) {
-      this.setState({text: ''})
+      this.setState({todoText: ''})
     }
   }
 
@@ -24,7 +24,7 @@ export default class TodoTextInput extends Component {
     if (e.which === 13) {
       this.props.onSave(text)
       if (this.props.newTodo) {
-        this.setState({text: ''})
+        this.setState({todoText: ''})
       }
     }
   }
@@ -32,12 +32,12 @@ export default class TodoTextInput extends Component {
   handleChange = e => {
     if (Taro.getEnv() === Taro.ENV_TYPE.WEAPP) return
     console.log('handleChange', e)
-    this.setState({text: e.target.value})
+    this.setState({todoText: e.target.value})
   }
 
   handleInput = e => {
     console.log('handleChange', e)
-    this.setState({text: e.target.value})
+    this.setState({todoText: e.target.value})
   }
 
   handleBlur = e => {
@@ -60,7 +60,7 @@ export default class TodoTextInput extends Component {
         placeholder={this.props.placeholder}
         autoFocus='true'
         confirmType='done'
-        value={this.state.text}
+        value={this.state.todoText}
         onBlur={this.handleBlur}
         onChange={this.handleChange}
         onInput={this.handleInput}

@@ -29,7 +29,7 @@ export default class TodoList extends Component {
     console.log(filteredTodos)
     return (
       <View className='todo-list'>
-        {filteredTodos.map(todo =>
+        {filteredTodos.map((todo, index) =>
           <TodoItem
             key={todo.id}
             todo={todo}

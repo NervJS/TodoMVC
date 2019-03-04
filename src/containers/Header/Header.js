@@ -42,9 +42,9 @@ export default class Header extends Component {
           <Text className='title'>todos</Text>
         </View>
         <View className='filters'>
-          {Object.keys(FILTER_TITLES).map(filter =>
-            <View key={filter} className='filters-item'>
-              <FilterLink filter={filter}/>
+          {Object.keys(FILTER_TITLES).map((filter, index) =>
+            <View key={index} className='filters-item'>
+              <FilterLink filter={filter} />
             </View>
           )}
         </View>
