@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, CheckboxGroup, Checkbox, Label } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { bindActionCreators } from 'redux'
 

@@ -30,6 +30,7 @@ export default class Header extends Component {
   }
 
   onSaveHandler = (text) => {
+    console.log(text)
     if (text.length !== 0) {
       this.props.actions.addTodo(text)
     }

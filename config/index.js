@@ -52,7 +52,13 @@ const config = {
   defineConstants: {
   },
   weapp: {
-
+    module: {
+      postcss: {
+        autoprefixer: {
+          enable: process.env.TARO_ENV === 'quickapp' ? false : true
+        }
+      }
+    }
   },
   h5: {
     publicPath: '/',

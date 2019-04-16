@@ -1,7 +1,10 @@
+.header {
+  flex-direction: column;
+}
 .title {
   width: 100%;
   font-size: 100px;
-  font-weight: 100;
+  font-weight: normal;
   text-align: center;
   color: rgba(175, 47, 47, 0.55);
   //-webkit-text-rendering: optimizeLegibility;
