@@ -87,1123 +87,1332 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "../taro/packages/taro-runtime/dist/index.esm.js":
-/*!*******************************************************!*\
-  !*** ../taro/packages/taro-runtime/dist/index.esm.js ***!
-  \*******************************************************/
-/*! exports provided: TaroEvent, connectReactPage, connectVuePage, createAppConfig, createDocument, createEvent, createPageConfig, document, injectPageInstance, internal_do_not_use_current, navigator, window */
+/***/ "./node_modules/@tarojs/runtime/dist/index.esm.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@tarojs/runtime/dist/index.esm.js ***!
+  \********************************************************/
+/*! exports provided: Style, TaroElement, TaroEvent, TaroNode, TaroRootElement, TaroText, connectReactPage, connectVuePage, createComponentConfig, createDocument, createEvent, createPageConfig, createReactApp, createVueApp, document, injectPageInstance, internal_do_not_use_current, navigator, window */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Style", function() { return Style; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaroElement", function() { return TaroElement; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaroEvent", function() { return TaroEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaroNode", function() { return TaroNode; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaroRootElement", function() { return TaroRootElement; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaroText", function() { return TaroText; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "connectReactPage", function() { return connectReactPage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "connectVuePage", function() { return connectVuePage; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createAppConfig", function() { return createAppConfig; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComponentConfig", function() { return createComponentConfig; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createDocument", function() { return createDocument; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEvent", function() { return createEvent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPageConfig", function() { return createPageConfig; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createReactApp", function() { return createReactApp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createVueApp", function() { return createVueApp; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "document", function() { return document; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "injectPageInstance", function() { return injectPageInstance; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "internal_do_not_use_current", function() { return Current; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "navigator", function() { return navigator; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "window", function() { return window; });
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-var incrementId = function incrementId() {
-  var id = 0;
-  return function () {
-    return id++;
-  };
+const incrementId = () => {
+    let id = 0;
+    return () => (id++).toString();
 };
-
 function isElement(node) {
-  return node.nodeType === 1
-  /* ELEMENT_NODE */
-  ;
+    return node.nodeType === 1 /* ELEMENT_NODE */;
 }
-
 function isText(node) {
-  return node.nodeType === 3
-  /* TEXT_NODE */
-  ;
+    return node.nodeType === 3 /* TEXT_NODE */;
 }
 
-var isArray = Array.isArray;
-var EMPTY_OBJ = {};
-
+const isArray = Array.isArray;
+const EMPTY_OBJ = {};
 function isUndefined(o) {
-  return typeof o === 'undefined';
+    return typeof o === 'undefined';
 }
-
 function isObject(o) {
-  return o !== null && _typeof(o) === 'object';
+    return o !== null && typeof o === 'object';
 }
-
 function isFunction(o) {
-  return typeof o === 'function';
+    return typeof o === 'function';
+}
+function toDashed(s) {
+    return s.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+}
+function toCamelCase(s) {
+    let camel = '';
+    let nextCap = false;
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] !== '-') {
+            camel += nextCap ? s[i].toUpperCase() : s[i];
+            nextCap = false;
+        }
+        else {
+            nextCap = true;
+        }
+    }
+    return camel;
 }
 
-var TaroEventTarget =
-/*#__PURE__*/
-function () {
-  function TaroEventTarget() {
-    _classCallCheck(this, TaroEventTarget);
-
-    this.__handlers = {};
-  }
-
-  _createClass(TaroEventTarget, [{
-    key: "addEventListener",
-    value: function addEventListener(type, handler, options) {
-      type = type.toLowerCase();
-      var handlers = this.__handlers[type];
-      var isCapture = Boolean(options);
-      var isOnce = false;
-
-      if (isObject(options)) {
-        isCapture = Boolean(options.capture);
-        isOnce = Boolean(options.once);
-      }
-
-      if (isOnce) {
-        var wrapper = function wrapper() {
-          handler.apply(this, arguments); // this 指向 Element
-
-          this.removeEventListener(type, wrapper);
-        };
-
-        this.addEventListener(type, wrapper, Object.assign(Object.assign({}, options), {
-          once: false
-        }));
-        return;
-      }
-
-      if (isCapture) {
-        // TODO: 实现 Capture
-        // eslint-disable-next-line no-console
-        console.error('The event capture feature is unimplemented.');
-      }
-
-      if (isArray(handlers)) {
-        handlers.push(handler);
-      } else {
-        this.__handlers[type] = [handler];
-      }
+class TaroEventTarget {
+    constructor() {
+        this.__handlers = {};
     }
-  }, {
-    key: "removeEventListener",
-    value: function removeEventListener(type, handler) {
-      type = type.toLowerCase();
-
-      if (handler == null) {
-        return;
-      }
-
-      var handlers = this.__handlers[type];
-
-      if (!isArray(handlers)) {
-        return;
-      }
-
-      var index = this.findIndex(handlers, handler);
-      handlers.splice(index, 1);
+    addEventListener(type, handler, options) {
+        type = type.toLowerCase();
+        const handlers = this.__handlers[type];
+        let isCapture = Boolean(options);
+        let isOnce = false;
+        if (isObject(options)) {
+            isCapture = Boolean(options.capture);
+            isOnce = Boolean(options.once);
+        }
+        if (isOnce) {
+            const wrapper = function () {
+                handler.apply(this, arguments); // this 指向 Element
+                this.removeEventListener(type, wrapper);
+            };
+            this.addEventListener(type, wrapper, Object.assign(Object.assign({}, options), { once: false }));
+            return;
+        }
+        if (isCapture) {
+            // TODO: 实现 Capture
+            // eslint-disable-next-line no-console
+            console.error('The event capture feature is unimplemented.');
+        }
+        if (isArray(handlers)) {
+            handlers.push(handler);
+        }
+        else {
+            this.__handlers[type] = [handler];
+        }
     }
-  }, {
-    key: "findIndex",
-    value: function findIndex(childeNodes, refChild) {
-      var index = childeNodes.indexOf(refChild);
-
-      if (index === -1) {
-        throw new Error('refChild 不属于'); // 改进报错
-      }
-
-      return index;
+    removeEventListener(type, handler) {
+        type = type.toLowerCase();
+        if (handler == null) {
+            return;
+        }
+        const handlers = this.__handlers[type];
+        if (!isArray(handlers)) {
+            return;
+        }
+        const index = this.findIndex(handlers, handler);
+        handlers.splice(index, 1);
     }
-  }]);
-
-  return TaroEventTarget;
-}();
-
-var eventSource = new Map();
-
-var TaroEvent =
-/*#__PURE__*/
-function () {
-  function TaroEvent(type, opts) {
-    _classCallCheck(this, TaroEvent);
-
-    this._stop = false;
-    this._end = false;
-    this.defaultPrevented = false;
-    this.type = type.toLowerCase();
-    this.bubbles = Boolean(opts && opts.bubbles);
-    this.cancelable = Boolean(opts && opts.cancelable);
-  }
-
-  _createClass(TaroEvent, [{
-    key: "stopPropagation",
-    value: function stopPropagation() {
-      this._stop = true;
+    findIndex(childeNodes, refChild) {
+        const index = childeNodes.indexOf(refChild);
+        if (index === -1) {
+            throw new Error('refChild 不属于'); // 改进报错
+        }
+        return index;
     }
-  }, {
-    key: "stopImmediatePropagation",
-    value: function stopImmediatePropagation() {
-      this._end = this._stop = true;
-    }
-  }, {
-    key: "preventDefault",
-    value: function preventDefault() {
-      this.defaultPrevented = true;
-    }
-  }]);
+}
 
-  return TaroEvent;
-}();
-
+const eventSource = new Map();
+class TaroEvent {
+    constructor(type, opts) {
+        this._stop = false;
+        this._end = false;
+        this.defaultPrevented = false;
+        this.type = type.toLowerCase();
+        this.bubbles = Boolean(opts && opts.bubbles);
+        this.cancelable = Boolean(opts && opts.cancelable);
+    }
+    stopPropagation() {
+        this._stop = true;
+    }
+    stopImmediatePropagation() {
+        this._end = this._stop = true;
+    }
+    preventDefault() {
+        this.defaultPrevented = true;
+    }
+}
 function createEvent(event) {
-  var domEv = new TaroEvent(event.type, {
-    bubbles: true,
-    cancelable: true
-  });
-
-  for (var key in event) {
-    if (key === 'currentTarget') {
-      continue;
+    const domEv = new TaroEvent(event.type, { bubbles: true, cancelable: true });
+    for (const key in event) {
+        if (key === 'currentTarget') {
+            continue;
+        }
+        domEv[key] = event[key];
     }
-
-    domEv[key] = event[key];
-  }
-
-  return domEv;
+    return domEv;
 }
 
-var nodeId = incrementId();
-
-var TaroNode =
-/*#__PURE__*/
-function (_TaroEventTarget) {
-  _inherits(TaroNode, _TaroEventTarget);
-
-  function TaroNode(nodeType, nodeName) {
-    var _this;
-
-    _classCallCheck(this, TaroNode);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(TaroNode).call(this));
-    _this.parentNode = null;
-    _this.childNodes = [];
-    _this._root = null;
-    _this.nodeType = nodeType;
-    _this.nodeName = nodeName;
-    _this.uid = "taro_node_".concat(nodeId());
-    eventSource.set(_this.uid, _assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(TaroNode, [{
-    key: "insertBefore",
-    value: function insertBefore(newChild, refChild) {
-      newChild.remove();
-      newChild.parentNode = this;
-      this.setRootElement(newChild);
-
-      if (refChild) {
-        var index = this.findIndex(this.childNodes, refChild);
-        this.childNodes.splice(index, 0, newChild);
-      } else {
-        this.childNodes.push(newChild);
-      }
-
-      this.enqueueUpdate();
-      return newChild;
+const nodeId = incrementId();
+class TaroNode extends TaroEventTarget {
+    constructor(nodeType, nodeName) {
+        super();
+        this.parentNode = null;
+        this.childNodes = [];
+        this._root = null;
+        this.nodeType = nodeType;
+        this.nodeName = nodeName;
+        this.uid = `taro_node_${nodeId()}`;
+        eventSource.set(this.uid, this);
     }
-  }, {
-    key: "appendChild",
-    value: function appendChild(child) {
-      this.insertBefore(child);
+    get nextSibling() {
+        const parentNode = this.parentNode;
+        if (parentNode) {
+            return parentNode.childNodes[this.findIndex(parentNode.childNodes, this) + 1];
+        }
     }
-  }, {
-    key: "replaceChild",
-    value: function replaceChild(newChild, oldChild) {
-      if (oldChild.parentNode === this) {
-        this.insertBefore(newChild, oldChild);
-        oldChild.remove();
-        return oldChild;
-      }
+    get previousSibling() {
+        const parentNode = this.parentNode;
+        if (parentNode) {
+            return parentNode.childNodes[this.findIndex(parentNode.childNodes, this) - 1];
+        }
     }
-  }, {
-    key: "removeChild",
-    value: function removeChild(child) {
-      this.removeRootElement(child);
-      var index = this.findIndex(this.childNodes, child);
-      child.parentNode = null;
-      this.childNodes.splice(index, 1);
-      this.enqueueUpdate();
-      eventSource["delete"](this.uid);
-      return child;
+    insertBefore(newChild, refChild) {
+        newChild.remove();
+        newChild.parentNode = this;
+        this.setRootElement(newChild);
+        if (refChild) {
+            const index = this.findIndex(this.childNodes, refChild);
+            this.childNodes.splice(index, 0, newChild);
+        }
+        else {
+            this.childNodes.push(newChild);
+        }
+        this.enqueueUpdate();
+        return newChild;
     }
-  }, {
-    key: "remove",
-    value: function remove() {
-      if (this.parentNode) {
-        this.parentNode.removeChild(this);
-      }
+    appendChild(child) {
+        this.insertBefore(child);
     }
-  }, {
-    key: "hasChildNodes",
-    value: function hasChildNodes() {
-      return this.childNodes.length > 0;
+    replaceChild(newChild, oldChild) {
+        if (oldChild.parentNode === this) {
+            this.insertBefore(newChild, oldChild);
+            oldChild.remove();
+            return oldChild;
+        }
     }
-  }, {
-    key: "enqueueUpdate",
-    value: function enqueueUpdate() {
-      if (this._root === null) {
-        return;
-      }
+    removeChild(child) {
+        this.removeRootElement(child);
+        const index = this.findIndex(this.childNodes, child);
+        child.parentNode = null;
+        this.childNodes.splice(index, 1);
+        this.enqueueUpdate();
+        eventSource.delete(this.uid);
+        return child;
+    }
+    remove() {
+        if (this.parentNode) {
+            this.parentNode.removeChild(this);
+        }
+    }
+    get firstChild() {
+        return this.childNodes[0];
+    }
+    get lastChild() {
+        const c = this.childNodes;
+        return c[c.length - 1];
+    }
+    hasChildNodes() {
+        return this.childNodes.length > 0;
+    }
+    enqueueUpdate() {
+        if (this._root === null) {
+            return;
+        }
+        this._root.performUpdate();
+    }
+    setRootElement(child) {
+        if (this._root === null || child._root === this._root) {
+            return;
+        }
+        else {
+            child._root = this._root;
+        }
+        for (let i = 0; i < child.childNodes.length; i++) {
+            this.setRootElement(child.childNodes[i]);
+        }
+    }
+    removeRootElement(node) {
+        if (node._root === null) {
+            return;
+        }
+        node._root = null;
+        for (let i = 0; i < node.childNodes.length; i++) {
+            this.removeRootElement(node.childNodes[i]);
+        }
+    }
+}
 
-      this._root.performUpdate();
+class TaroText extends TaroNode {
+    constructor(text) {
+        super(3 /* TEXT_NODE */, '#text');
+        this._value = text;
     }
-  }, {
-    key: "setRootElement",
-    value: function setRootElement(child) {
-      if (this._root === null || child._root === this._root) {
-        return;
-      } else {
-        child._root = this._root;
-      }
-
-      for (var i = 0; i < child.childNodes.length; i++) {
-        this.setRootElement(child.childNodes[i]);
-      }
+    set textContent(text) {
+        this._value = text;
+        this.enqueueUpdate();
     }
-  }, {
-    key: "removeRootElement",
-    value: function removeRootElement(node) {
-      if (node._root === null) {
-        return;
-      }
-
-      node._root = null;
-
-      for (var i = 0; i < node.childNodes.length; i++) {
-        this.removeRootElement(node.childNodes[i]);
-      }
+    get textContent() {
+        return this._value;
     }
-  }, {
-    key: "nextSibling",
-    get: function get() {
-      var parentNode = this.parentNode;
-
-      if (parentNode) {
-        return parentNode.childNodes[this.findIndex(parentNode.childNodes, this) + 1];
-      }
+    set nodeValue(text) {
+        this._value = text;
+        this.enqueueUpdate();
     }
-  }, {
-    key: "previousSibling",
-    get: function get() {
-      var parentNode = this.parentNode;
-
-      if (parentNode) {
-        return parentNode.childNodes[this.findIndex(parentNode.childNodes, this) - 1];
-      }
+    get nodeValue() {
+        return this._value;
     }
-  }, {
-    key: "firstChild",
-    get: function get() {
-      return this.childNodes[0];
-    }
-  }, {
-    key: "lastChild",
-    get: function get() {
-      var c = this.childNodes;
-      return c[c.length - 1];
-    }
-  }]);
+}
 
-  return TaroNode;
-}(TaroEventTarget);
-
-var TaroText =
-/*#__PURE__*/
-function (_TaroNode) {
-  _inherits(TaroText, _TaroNode);
-
-  function TaroText(text) {
-    var _this2;
-
-    _classCallCheck(this, TaroText);
-
-    _this2 = _possibleConstructorReturn(this, _getPrototypeOf(TaroText).call(this, 3
-    /* TEXT_NODE */
-    , '#text'));
-    _this2._value = text;
-    return _this2;
-  }
-
-  _createClass(TaroText, [{
-    key: "textContent",
-    set: function set(text) {
-      this._value = text;
-      this.enqueueUpdate();
-    },
-    get: function get() {
-      return this._value;
-    }
-  }, {
-    key: "nodeValue",
-    set: function set(text) {
-      this._value = text;
-      this.enqueueUpdate();
-    },
-    get: function get() {
-      return this._value;
-    }
-  }]);
-
-  return TaroText;
-}(TaroNode);
 /*
  *
  * https://www.w3.org/Style/CSS/all-properties.en.html
  */
+const styleProperties = [
+    'alignContent',
+    'alignItems',
+    'alignSelf',
+    'alignmentAdjust',
+    'alignmentBaseline',
+    'all',
+    'animation',
+    'animationDelay',
+    'animationDirection',
+    'animationDuration',
+    'animationFillMode',
+    'animationIterationCount',
+    'animationName',
+    'animationPlayState',
+    'animationTimingFunction',
+    'appearance',
+    'azimuth',
+    'backfaceVisibility',
+    'background',
+    'backgroundAttachment',
+    'backgroundBlendMode',
+    'backgroundClip',
+    'backgroundColor',
+    'backgroundImage',
+    'backgroundOrigin',
+    'backgroundPosition',
+    'backgroundRepeat',
+    'backgroundSize',
+    'baselineShift',
+    'blockOverflow',
+    'blockSize',
+    'bookmarkLabel',
+    'bookmarkLevel',
+    'bookmarkState',
+    'border',
+    'borderBlock',
+    'borderBlockColor',
+    'borderBlockEnd',
+    'borderBlockEndColor',
+    'borderBlockEndStyle',
+    'borderBlockEndWidth',
+    'borderBlockStart',
+    'borderBlockStartColor',
+    'borderBlockStartStyle',
+    'borderBlockStartWidth',
+    'borderBlockStyle',
+    'borderBlockWidth',
+    'borderBottom',
+    'borderBottomColor',
+    'borderBottomFitLength',
+    'borderBottomFitWidth',
+    'borderBottomImage',
+    'borderBottomLeftFitWidth',
+    'borderBottomLeftImage',
+    'borderBottomLeftRadius',
+    'borderBottomRightFitLength',
+    'borderBottomRightFitWidth',
+    'borderBottomRightImage',
+    'borderBottomRightRadius',
+    'borderBottomStyle',
+    'borderBottomWidth',
+    'borderBottomlEftFitLength',
+    'borderBoundary',
+    'borderBreak',
+    'borderCollapse',
+    'borderColor',
+    'borderCornerFit',
+    'borderCornerImage',
+    'borderCornerImageTransform',
+    'borderEndEndRadius',
+    'borderEndStartRadius',
+    'borderFit',
+    'borderFitLength',
+    'borderFitWidth',
+    'borderImage',
+    'borderImageOutset',
+    'borderImageRepeat',
+    'borderImageSlice',
+    'borderImageSource',
+    'borderImageTransform',
+    'borderImageWidth',
+    'borderInline',
+    'borderInlineColor',
+    'borderInlineEnd',
+    'borderInlineEndColor',
+    'borderInlineEndStyle',
+    'borderInlineEndWidth',
+    'borderInlineStart',
+    'borderInlineStartColor',
+    'borderInlineStartStyle',
+    'borderInlineStartWidth',
+    'borderInlineStyle',
+    'borderInlineWidth',
+    'borderLeft',
+    'borderLeftColor',
+    'borderLeftFitLength',
+    'borderLeftFitWidth',
+    'borderLeftImage',
+    'borderLeftStyle',
+    'borderLeftWidth',
+    'borderRadius',
+    'borderRight',
+    'borderRightColor',
+    'borderRightFitLength',
+    'borderRightFitWidth',
+    'borderRightImage',
+    'borderRightStyle',
+    'borderRightWidth',
+    'borderSpacing',
+    'borderStartEndRadius',
+    'borderStartStartRadius',
+    'borderStyle',
+    'borderTop',
+    'borderTopColor',
+    'borderTopFitLength',
+    'borderTopFitWidth',
+    'borderTopImage',
+    'borderTopLeftFitLength',
+    'borderTopLeftFitWidth',
+    'borderTopLeftImage',
+    'borderTopLeftRadius',
+    'borderTopRightFitLength',
+    'borderTopRightFitWidth',
+    'borderTopRightImage',
+    'borderTopRightRadius',
+    'borderTopStyle',
+    'borderTopWidth',
+    'borderWidth',
+    'bottom',
+    'boxDecorationBreak',
+    'boxShadow',
+    'boxSizing',
+    'boxSnap',
+    'breakAfter',
+    'breakBefore',
+    'breakInside',
+    'captionSide',
+    'caret',
+    'caretColor',
+    'caretShape',
+    'chains',
+    'clear',
+    'clip',
+    'clipPath',
+    'clipRule',
+    'color',
+    'colorAdjust',
+    'colorInterpolationFilters',
+    'colorScheme',
+    'columnCount',
+    'columnFill',
+    'columnGap',
+    'columnRule',
+    'columnRuleColor',
+    'columnRuleStyle',
+    'columnRuleWidth',
+    'columnSpan',
+    'columnWidth',
+    'columns',
+    'contain',
+    'content',
+    'continue',
+    'counterIncrement',
+    'counterReset',
+    'counterSet',
+    'cue',
+    'cueAfter',
+    'cueBefore',
+    'cursor',
+    'direction',
+    'display',
+    'dominantBaseline',
+    'dropInitialAfterAdjust',
+    'dropInitialAfterAlign',
+    'dropInitialBeforeAdjust',
+    'dropInitialBeforeAlign',
+    'dropInitialSize',
+    'dropInitialValue',
+    'elevation',
+    'emptyCells',
+    'filter',
+    'flex',
+    'flexBasis',
+    'flexDirection',
+    'flexFlow',
+    'flexGrow',
+    'flexShrink',
+    'flexWrap',
+    'float',
+    'floodColor',
+    'floodOpacity',
+    'flow',
+    'flowFrom',
+    'flowInto',
+    'font',
+    'fontFamily',
+    'fontFeatureSettings',
+    'fontKerning',
+    'fontLanguageOverride',
+    'fontMaxSize',
+    'fontMinSize',
+    'fontOpticalSizing',
+    'fontPalette',
+    'fontSize',
+    'fontSizeAdjust',
+    'fontStretch',
+    'fontStyle',
+    'fontSynthesis',
+    'fontSynthesisSmallCaps',
+    'fontSynthesisStyle',
+    'fontSynthesisWeight',
+    'fontVariant',
+    'fontVariantAlternates',
+    'fontVariantCaps',
+    'fontVariantEastAsian',
+    'fontVariantEmoji',
+    'fontVariantLigatures',
+    'fontVariantNumeric',
+    'fontVariantPosition',
+    'fontVariationSettings',
+    'fontWeight',
+    'footnoteDisplay',
+    'footnotePolicy',
+    'forcedColorAdjust',
+    'gap',
+    'glyphOrientationVertical',
+    'grid',
+    'gridArea',
+    'gridAutoColumns',
+    'gridAutoFlow',
+    'gridAutoRows',
+    'gridColumn',
+    'gridColumnEnd',
+    'gridColumnStart',
+    'gridRow',
+    'gridRowEnd',
+    'gridRowStart',
+    'gridTemplate',
+    'gridTemplateAreas',
+    'gridTemplateColumns',
+    'gridTemplateRows',
+    'hangingPunctuation',
+    'height',
+    'hyphenateCharacter',
+    'hyphenateLimitChars',
+    'hyphenateLimitLast',
+    'hyphenateLimitLines',
+    'hyphenateLimitZone',
+    'hyphens',
+    'imageOrientation',
+    'imageResolution',
+    'initialLetters',
+    'initialLettersAlign',
+    'initialLettersWrap',
+    'inlineBoxAlign',
+    'inlineSize',
+    'inlineSizing',
+    'inset',
+    'insetBlock',
+    'insetBlockEnd',
+    'insetBlockStart',
+    'insetInline',
+    'insetInlineEnd',
+    'insetInlineStart',
+    'isolation',
+    'justifyContent',
+    'justifyItems',
+    'justifySelf',
+    'left',
+    'letterSpacing',
+    'lightingColor',
+    'lineBreak',
+    'lineClamp',
+    'lineGrid',
+    'lineHeight',
+    'linePadding',
+    'lineSnap',
+    'lineStacking',
+    'lineStackingRuby',
+    'lineStackingShift',
+    'lineStackingStrategy',
+    'listStyle',
+    'listStyleImage',
+    'listStylePosition',
+    'listStyleType',
+    'margin',
+    'marginBlock',
+    'marginBlockEnd',
+    'marginBlockStart',
+    'marginBottom',
+    'marginInline',
+    'marginInlineEnd',
+    'marginInlineStart',
+    'marginLeft',
+    'marginRight',
+    'marginTop',
+    'marginTrim',
+    'markerSide',
+    'mask',
+    'maskBorder',
+    'maskBorderMode',
+    'maskBorderOutset',
+    'maskBorderRepeat',
+    'maskBorderSlice',
+    'maskBorderSource',
+    'maskBorderWidth',
+    'maskClip',
+    'maskComposite',
+    'maskImage',
+    'maskMode',
+    'maskOrigin',
+    'maskPosition',
+    'maskRepeat',
+    'maskSize',
+    'maskType',
+    'maxBlockSize',
+    'maxHeight',
+    'maxInlineSize',
+    'maxLines',
+    'maxWidth',
+    'minBlockSize',
+    'minHeight',
+    'minInlineSize',
+    'minWidth',
+    'mixBlendMode',
+    'navDown',
+    'navLeft',
+    'navRight',
+    'navUp',
+    'objectFit',
+    'objectPosition',
+    'offset',
+    'offsetAfter',
+    'offsetAnchor',
+    'offsetBefore',
+    'offsetDistance',
+    'offsetEnd',
+    'offsetPath',
+    'offsetPosition',
+    'offsetRotate',
+    'offsetStart',
+    'opacity',
+    'order',
+    'orphans',
+    'outline',
+    'outlineColor',
+    'outlineOffset',
+    'outlineStyle',
+    'outlineWidth',
+    'overflow',
+    'overflowBlock',
+    'overflowInline',
+    'overflowWrap',
+    'overflowX',
+    'overflowY',
+    'padding',
+    'paddingBlock',
+    'paddingBlockEnd',
+    'paddingBlockStart',
+    'paddingBottom',
+    'paddingInline',
+    'paddingInlineEnd',
+    'paddingInlineStart',
+    'paddingLeft',
+    'paddingRight',
+    'paddingTop',
+    'page',
+    'pageBreakAfter',
+    'pageBreakBefore',
+    'pageBreakInside',
+    'pause',
+    'pauseAfter',
+    'pauseBefore',
+    'perspective',
+    'perspectiveOrigin',
+    'pitch',
+    'pitchRange',
+    'placeContent',
+    'placeItems',
+    'placeSelf',
+    'playDuring',
+    'position',
+    'quotes',
+    'regionFragment',
+    'resize',
+    'richness',
+    'right',
+    'rowGap',
+    'rubyAlign',
+    'rubyMerge',
+    'rubyPosition',
+    'running',
+    'scrollBehavior',
+    'scrollMargin',
+    'scrollMarginBlock',
+    'scrollMarginBlockEnd',
+    'scrollMarginBlockStart',
+    'scrollMarginBottom',
+    'scrollMarginInline',
+    'scrollMarginInlineEnd',
+    'scrollMarginInlineStart',
+    'scrollMarginLeft',
+    'scrollMarginRight',
+    'scrollMarginTop',
+    'scrollPadding',
+    'scrollPaddingBlock',
+    'scrollPaddingBlockEnd',
+    'scrollPaddingBlockStart',
+    'scrollPaddingBottom',
+    'scrollPaddingInline',
+    'scrollPaddingInlineEnd',
+    'scrollPaddingInlineStart',
+    'scrollPaddingLeft',
+    'scrollPaddingRight',
+    'scrollPaddingTop',
+    'scrollSnapAlign',
+    'scrollSnapStop',
+    'scrollSnapType',
+    'shapeImageThreshold',
+    'shapeInside',
+    'shapeMargin',
+    'shapeOutside',
+    'speak',
+    'speakHeader',
+    'speakNumeral',
+    'speakPunctuation',
+    'speechRate',
+    'stress',
+    'stringSet',
+    'tabSize',
+    'tableLayout',
+    'textAlign',
+    'textAlignAll',
+    'textAlignLast',
+    'textCombineUpright',
+    'textDecoration',
+    'textDecorationColor',
+    'textDecorationLine',
+    'textDecorationStyle',
+    'textEmphasis',
+    'textEmphasisColor',
+    'textEmphasisPosition',
+    'textEmphasisStyle',
+    'textGroupAlign',
+    'textHeight',
+    'textIndent',
+    'textJustify',
+    'textOrientation',
+    'textOverflow',
+    'textShadow',
+    'textSpaceCollapse',
+    'textSpaceTrim',
+    'textSpacing',
+    'textTransform',
+    'textUnderlinePosition',
+    'textWrap',
+    'top',
+    'transform',
+    'transformBox',
+    'transformOrigin',
+    'transformStyle',
+    'transition',
+    'transitionDelay',
+    'transitionDuration',
+    'transitionProperty',
+    'transitionTimingFunction',
+    'unicodeBidi',
+    'userSelect',
+    'verticalAlign',
+    'visibility',
+    'voiceFamily',
+    'volume',
+    'whiteSpace',
+    'widows',
+    'width',
+    'willChange',
+    'wordBreak',
+    'wordSpacing',
+    'wordWrap',
+    'wrapAfter',
+    'wrapBefore',
+    'wrapFlow',
+    'wrapInside',
+    'wrapThrough',
+    'writingMode',
+    'zIndex'
+];
 
-
-var styleProperties = ['alignContent', 'alignItems', 'alignSelf', 'alignmentAdjust', 'alignmentBaseline', 'all', 'animation', 'animationDelay', 'animationDirection', 'animationDuration', 'animationFillMode', 'animationIterationCount', 'animationName', 'animationPlayState', 'animationTimingFunction', 'appearance', 'azimuth', 'backfaceVisibility', 'background', 'backgroundAttachment', 'backgroundBlendMode', 'backgroundClip', 'backgroundColor', 'backgroundImage', 'backgroundOrigin', 'backgroundPosition', 'backgroundRepeat', 'backgroundSize', 'baselineShift', 'blockOverflow', 'blockSize', 'bookmarkLabel', 'bookmarkLevel', 'bookmarkState', 'border', 'borderBlock', 'borderBlockColor', 'borderBlockEnd', 'borderBlockEndColor', 'borderBlockEndStyle', 'borderBlockEndWidth', 'borderBlockStart', 'borderBlockStartColor', 'borderBlockStartStyle', 'borderBlockStartWidth', 'borderBlockStyle', 'borderBlockWidth', 'borderBottom', 'borderBottomColor', 'borderBottomFitLength', 'borderBottomFitWidth', 'borderBottomImage', 'borderBottomLeftFitWidth', 'borderBottomLeftImage', 'borderBottomLeftRadius', 'borderBottomRightFitLength', 'borderBottomRightFitWidth', 'borderBottomRightImage', 'borderBottomRightRadius', 'borderBottomStyle', 'borderBottomWidth', 'borderBottomlEftFitLength', 'borderBoundary', 'borderBreak', 'borderCollapse', 'borderColor', 'borderCornerFit', 'borderCornerImage', 'borderCornerImageTransform', 'borderEndEndRadius', 'borderEndStartRadius', 'borderFit', 'borderFitLength', 'borderFitWidth', 'borderImage', 'borderImageOutset', 'borderImageRepeat', 'borderImageSlice', 'borderImageSource', 'borderImageTransform', 'borderImageWidth', 'borderInline', 'borderInlineColor', 'borderInlineEnd', 'borderInlineEndColor', 'borderInlineEndStyle', 'borderInlineEndWidth', 'borderInlineStart', 'borderInlineStartColor', 'borderInlineStartStyle', 'borderInlineStartWidth', 'borderInlineStyle', 'borderInlineWidth', 'borderLeft', 'borderLeftColor', 'borderLeftFitLength', 'borderLeftFitWidth', 'borderLeftImage', 'borderLeftStyle', 'borderLeftWidth', 'borderRadius', 'borderRight', 'borderRightColor', 'borderRightFitLength', 'borderRightFitWidth', 'borderRightImage', 'borderRightStyle', 'borderRightWidth', 'borderSpacing', 'borderStartEndRadius', 'borderStartStartRadius', 'borderStyle', 'borderTop', 'borderTopColor', 'borderTopFitLength', 'borderTopFitWidth', 'borderTopImage', 'borderTopLeftFitLength', 'borderTopLeftFitWidth', 'borderTopLeftImage', 'borderTopLeftRadius', 'borderTopRightFitLength', 'borderTopRightFitWidth', 'borderTopRightImage', 'borderTopRightRadius', 'borderTopStyle', 'borderTopWidth', 'borderWidth', 'bottom', 'boxDecorationBreak', 'boxShadow', 'boxSizing', 'boxSnap', 'breakAfter', 'breakBefore', 'breakInside', 'captionSide', 'caret', 'caretColor', 'caretShape', 'chains', 'clear', 'clip', 'clipPath', 'clipRule', 'color', 'colorAdjust', 'colorInterpolationFilters', 'colorScheme', 'columnCount', 'columnFill', 'columnGap', 'columnRule', 'columnRuleColor', 'columnRuleStyle', 'columnRuleWidth', 'columnSpan', 'columnWidth', 'columns', 'contain', 'content', 'continue', 'counterIncrement', 'counterReset', 'counterSet', 'cue', 'cueAfter', 'cueBefore', 'cursor', 'direction', 'display', 'dominantBaseline', 'dropInitialAfterAdjust', 'dropInitialAfterAlign', 'dropInitialBeforeAdjust', 'dropInitialBeforeAlign', 'dropInitialSize', 'dropInitialValue', 'elevation', 'emptyCells', 'filter', 'flex', 'flexBasis', 'flexDirection', 'flexFlow', 'flexGrow', 'flexShrink', 'flexWrap', 'float', 'floodColor', 'floodOpacity', 'flow', 'flowFrom', 'flowInto', 'font', 'fontFamily', 'fontFeatureSettings', 'fontKerning', 'fontLanguageOverride', 'fontMaxSize', 'fontMinSize', 'fontOpticalSizing', 'fontPalette', 'fontSize', 'fontSizeAdjust', 'fontStretch', 'fontStyle', 'fontSynthesis', 'fontSynthesisSmallCaps', 'fontSynthesisStyle', 'fontSynthesisWeight', 'fontVariant', 'fontVariantAlternates', 'fontVariantCaps', 'fontVariantEastAsian', 'fontVariantEmoji', 'fontVariantLigatures', 'fontVariantNumeric', 'fontVariantPosition', 'fontVariationSettings', 'fontWeight', 'footnoteDisplay', 'footnotePolicy', 'forcedColorAdjust', 'gap', 'glyphOrientationVertical', 'grid', 'gridArea', 'gridAutoColumns', 'gridAutoFlow', 'gridAutoRows', 'gridColumn', 'gridColumnEnd', 'gridColumnStart', 'gridRow', 'gridRowEnd', 'gridRowStart', 'gridTemplate', 'gridTemplateAreas', 'gridTemplateColumns', 'gridTemplateRows', 'hangingPunctuation', 'height', 'hyphenateCharacter', 'hyphenateLimitChars', 'hyphenateLimitLast', 'hyphenateLimitLines', 'hyphenateLimitZone', 'hyphens', 'imageOrientation', 'imageResolution', 'initialLetters', 'initialLettersAlign', 'initialLettersWrap', 'inlineBoxAlign', 'inlineSize', 'inlineSizing', 'inset', 'insetBlock', 'insetBlockEnd', 'insetBlockStart', 'insetInline', 'insetInlineEnd', 'insetInlineStart', 'isolation', 'justifyContent', 'justifyItems', 'justifySelf', 'left', 'letterSpacing', 'lightingColor', 'lineBreak', 'lineClamp', 'lineGrid', 'lineHeight', 'linePadding', 'lineSnap', 'lineStacking', 'lineStackingRuby', 'lineStackingShift', 'lineStackingStrategy', 'listStyle', 'listStyleImage', 'listStylePosition', 'listStyleType', 'margin', 'marginBlock', 'marginBlockEnd', 'marginBlockStart', 'marginBottom', 'marginInline', 'marginInlineEnd', 'marginInlineStart', 'marginLeft', 'marginRight', 'marginTop', 'marginTrim', 'markerSide', 'mask', 'maskBorder', 'maskBorderMode', 'maskBorderOutset', 'maskBorderRepeat', 'maskBorderSlice', 'maskBorderSource', 'maskBorderWidth', 'maskClip', 'maskComposite', 'maskImage', 'maskMode', 'maskOrigin', 'maskPosition', 'maskRepeat', 'maskSize', 'maskType', 'maxBlockSize', 'maxHeight', 'maxInlineSize', 'maxLines', 'maxWidth', 'minBlockSize', 'minHeight', 'minInlineSize', 'minWidth', 'mixBlendMode', 'navDown', 'navLeft', 'navRight', 'navUp', 'objectFit', 'objectPosition', 'offset', 'offsetAfter', 'offsetAnchor', 'offsetBefore', 'offsetDistance', 'offsetEnd', 'offsetPath', 'offsetPosition', 'offsetRotate', 'offsetStart', 'opacity', 'order', 'orphans', 'outline', 'outlineColor', 'outlineOffset', 'outlineStyle', 'outlineWidth', 'overflow', 'overflowBlock', 'overflowInline', 'overflowWrap', 'overflowX', 'overflowY', 'padding', 'paddingBlock', 'paddingBlockEnd', 'paddingBlockStart', 'paddingBottom', 'paddingInline', 'paddingInlineEnd', 'paddingInlineStart', 'paddingLeft', 'paddingRight', 'paddingTop', 'page', 'pageBreakAfter', 'pageBreakBefore', 'pageBreakInside', 'pause', 'pauseAfter', 'pauseBefore', 'perspective', 'perspectiveOrigin', 'pitch', 'pitchRange', 'placeContent', 'placeItems', 'placeSelf', 'playDuring', 'position', 'quotes', 'regionFragment', 'resize', 'richness', 'right', 'rowGap', 'rubyAlign', 'rubyMerge', 'rubyPosition', 'running', 'scrollBehavior', 'scrollMargin', 'scrollMarginBlock', 'scrollMarginBlockEnd', 'scrollMarginBlockStart', 'scrollMarginBottom', 'scrollMarginInline', 'scrollMarginInlineEnd', 'scrollMarginInlineStart', 'scrollMarginLeft', 'scrollMarginRight', 'scrollMarginTop', 'scrollPadding', 'scrollPaddingBlock', 'scrollPaddingBlockEnd', 'scrollPaddingBlockStart', 'scrollPaddingBottom', 'scrollPaddingInline', 'scrollPaddingInlineEnd', 'scrollPaddingInlineStart', 'scrollPaddingLeft', 'scrollPaddingRight', 'scrollPaddingTop', 'scrollSnapAlign', 'scrollSnapStop', 'scrollSnapType', 'shapeImageThreshold', 'shapeInside', 'shapeMargin', 'shapeOutside', 'speak', 'speakHeader', 'speakNumeral', 'speakPunctuation', 'speechRate', 'stress', 'stringSet', 'tabSize', 'tableLayout', 'textAlign', 'textAlignAll', 'textAlignLast', 'textCombineUpright', 'textDecoration', 'textDecorationColor', 'textDecorationLine', 'textDecorationStyle', 'textEmphasis', 'textEmphasisColor', 'textEmphasisPosition', 'textEmphasisStyle', 'textGroupAlign', 'textHeight', 'textIndent', 'textJustify', 'textOrientation', 'textOverflow', 'textShadow', 'textSpaceCollapse', 'textSpaceTrim', 'textSpacing', 'textTransform', 'textUnderlinePosition', 'textWrap', 'top', 'transform', 'transformBox', 'transformOrigin', 'transformStyle', 'transition', 'transitionDelay', 'transitionDuration', 'transitionProperty', 'transitionTimingFunction', 'unicodeBidi', 'userSelect', 'verticalAlign', 'visibility', 'voiceFamily', 'volume', 'whiteSpace', 'widows', 'width', 'willChange', 'wordBreak', 'wordSpacing', 'wordWrap', 'wrapAfter', 'wrapBefore', 'wrapFlow', 'wrapInside', 'wrapThrough', 'writingMode', 'zIndex'];
-
-function toDashed(s) {
-  return s.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+class Style {
+    constructor(element) {
+        this._element = element;
+        this._usedStyleProp = new Set();
+        this._value = {};
+        this.initStyle();
+    }
+    initStyle() {
+        const properties = {};
+        const usedStyleProp = this._usedStyleProp;
+        for (let i = 0; i < styleProperties.length; i++) {
+            const styleKey = styleProperties[i];
+            properties[styleKey] = {
+                get() {
+                    return this._value[styleKey] || '';
+                },
+                set(newVal) {
+                    const old = this[styleKey];
+                    if (newVal) {
+                        usedStyleProp.add(styleKey);
+                    }
+                    if (old !== newVal) {
+                        this._value[styleKey] = newVal;
+                        this._element.enqueueUpdate();
+                    }
+                }
+            };
+        }
+        Object.defineProperties(this, properties);
+    }
+    get cssText() {
+        let text = '';
+        this._usedStyleProp.forEach(key => {
+            const val = this[key];
+            text += `${toDashed(key)}: ${val};`;
+        });
+        return text;
+    }
+    set cssText(str) {
+        if (str == null) {
+            str = '';
+        }
+        this._usedStyleProp.forEach(prop => {
+            this.removeProperty(prop);
+        });
+        if (str === '') {
+            return;
+        }
+        const rules = str.split(';');
+        for (let i = 0; i < rules.length; i++) {
+            const rule = rules[i].trim();
+            if (rule === '') {
+                continue;
+            }
+            const [propName, val] = rule.split(':');
+            if (isUndefined(val)) {
+                continue;
+            }
+            this.setProperty(propName.trim(), val.trim());
+        }
+    }
+    setProperty(propertyName, value) {
+        propertyName = toCamelCase(propertyName);
+        if (isUndefined(value)) {
+            return;
+        }
+        if (value === null || value === '') {
+            this.removeProperty(propertyName);
+        }
+        else {
+            this[propertyName] = value;
+        }
+    }
+    removeProperty(propertyName) {
+        propertyName = toCamelCase(propertyName);
+        if (!this._usedStyleProp.has(propertyName)) {
+            return '';
+        }
+        const value = this[propertyName];
+        this[propertyName] = '';
+        this._usedStyleProp.delete(propertyName);
+        return value;
+    }
+    getPropertyValue(propertyName) {
+        propertyName = toCamelCase(propertyName);
+        const value = this[propertyName];
+        if (!value) {
+            return '';
+        }
+        return value;
+    }
 }
 
-function toCamelCase(s) {
-  var camel = '';
-  var nextCap = false;
-
-  for (var i = 0; i < s.length; i++) {
-    if (s[i] !== '-') {
-      camel += nextCap ? s[i].toUpperCase() : s[i];
-      nextCap = false;
-    } else {
-      nextCap = true;
+class TaroElement extends TaroNode {
+    constructor(nodeType, nodeName) {
+        super(nodeType || 1 /* ELEMENT_NODE */, nodeName);
+        this.props = {};
+        this.tagName = nodeName.toUpperCase();
+        this.style = new Style(this);
     }
-  }
-
-  return camel;
-}
-
-var Style =
-/*#__PURE__*/
-function () {
-  function Style(element) {
-    _classCallCheck(this, Style);
-
-    this._element = element;
-    this._usedStyleProp = new Set();
-    this._value = {};
-    this.initStyle();
-  }
-
-  _createClass(Style, [{
-    key: "initStyle",
-    value: function initStyle() {
-      var properties = {};
-      var usedStyleProp = this._usedStyleProp;
-
-      var _loop = function _loop(i) {
-        var styleKey = styleProperties[i];
-        properties[styleKey] = {
-          get: function get() {
-            return this._value[styleKey] || '';
-          },
-          set: function set(newVal) {
-            var old = this[styleKey];
-
-            if (newVal) {
-              usedStyleProp.add(styleKey);
-            }
-
-            if (old !== newVal) {
-              this._value[styleKey] = newVal;
-
-              this._element.enqueueUpdate();
-            }
-          }
-        };
-      };
-
-      for (var i = 0; i < styleProperties.length; i++) {
-        _loop(i);
-      }
-
-      Object.defineProperties(this, properties);
+    get id() {
+        return this.getAttribute('id');
     }
-  }, {
-    key: "setProperty",
-    value: function setProperty(propertyName, value) {
-      propertyName = toCamelCase(propertyName);
-
-      if (isUndefined(value)) {
-        return;
-      }
-
-      if (value === null || value === '') {
-        this.removeProperty(propertyName);
-      } else {
-        this[propertyName] = value;
-      }
+    set id(val) {
+        this.setAttribute('id', val);
     }
-  }, {
-    key: "removeProperty",
-    value: function removeProperty(propertyName) {
-      propertyName = toCamelCase(propertyName);
-
-      if (!this._usedStyleProp.has(propertyName)) {
-        return '';
-      }
-
-      var value = this[propertyName];
-      this[propertyName] = '';
-
-      this._usedStyleProp["delete"](propertyName);
-
-      return value;
+    get className() {
+        return this.getAttribute('class') || '';
     }
-  }, {
-    key: "getPropertyValue",
-    value: function getPropertyValue(propertyName) {
-      propertyName = toCamelCase(propertyName);
-      var value = this[propertyName];
-
-      if (!value) {
-        return '';
-      }
-
-      return value;
+    set className(val) {
+        this.setAttribute('class', val);
     }
-  }, {
-    key: "cssText",
-    get: function get() {
-      var _this3 = this;
-
-      var text = '';
-
-      this._usedStyleProp.forEach(function (key) {
-        var val = _this3[key];
-        text += "".concat(toDashed(key), ": ").concat(val, ";");
-      });
-
-      return text;
-    },
-    set: function set(str) {
-      var _this4 = this;
-
-      if (str == null) {
-        str = '';
-      }
-
-      this._usedStyleProp.forEach(function (prop) {
-        _this4.removeProperty(prop);
-      });
-
-      if (str === '') {
-        return;
-      }
-
-      var rules = str.split(';');
-
-      for (var i = 0; i < rules.length; i++) {
-        var rule = rules[i].trim();
-
-        if (rule === '') {
-          continue;
+    get cssText() {
+        return this.getAttribute('style');
+    }
+    get children() {
+        return this.childNodes.filter(isElement);
+    }
+    hasAttribute(qualifiedName) {
+        return !isUndefined(this.props[qualifiedName]);
+    }
+    hasAttributes() {
+        return this.attributes.length > 0;
+    }
+    setAttribute(qualifiedName, value) {
+        if (qualifiedName === 'style') {
+            this.style.cssText = value;
         }
-
-        var _rule$split = rule.split(':'),
-            _rule$split2 = _slicedToArray(_rule$split, 2),
-            propName = _rule$split2[0],
-            val = _rule$split2[1];
-
-        if (isUndefined(val)) {
-          continue;
+        else if (qualifiedName === 'id') {
+            eventSource.delete(this.uid);
+            this.uid = value;
+            eventSource.set(value, this);
         }
-
-        this.setProperty(propName.trim(), val.trim());
-      }
-    }
-  }]);
-
-  return Style;
-}();
-
-var TaroElement =
-/*#__PURE__*/
-function (_TaroNode2) {
-  _inherits(TaroElement, _TaroNode2);
-
-  function TaroElement(nodeType, nodeName) {
-    var _this5;
-
-    _classCallCheck(this, TaroElement);
-
-    _this5 = _possibleConstructorReturn(this, _getPrototypeOf(TaroElement).call(this, nodeType || 1
-    /* ELEMENT_NODE */
-    , nodeName));
-    _this5.props = {};
-    _this5.tagName = nodeName.toUpperCase();
-    _this5.style = new Style(_assertThisInitialized(_this5));
-    return _this5;
-  }
-
-  _createClass(TaroElement, [{
-    key: "hasAttribute",
-    value: function hasAttribute(qualifiedName) {
-      return !isUndefined(this.props[qualifiedName]);
-    }
-  }, {
-    key: "hasAttributes",
-    value: function hasAttributes() {
-      return this.attributes.length > 0;
-    }
-  }, {
-    key: "setAttribute",
-    value: function setAttribute(qualifiedName, value) {
-      if (qualifiedName === 'style') {
-        this.style.cssText = value;
-      } else if (qualifiedName === 'id') {
-        eventSource["delete"](this.uid);
-        this.uid = value;
-        eventSource.set(value, this);
-      } else {
-        this.props[qualifiedName] = value;
-      }
-
-      this.enqueueUpdate();
-    }
-  }, {
-    key: "removeAttribute",
-    value: function removeAttribute(qualifiedName) {
-      if (qualifiedName === 'style') {
-        this.style.cssText = '';
-      } else {
-        delete this.props[qualifiedName];
-      }
-
-      this.enqueueUpdate();
-    }
-  }, {
-    key: "getAttribute",
-    value: function getAttribute(qualifiedName) {
-      var attr = qualifiedName === 'style' ? this.style.cssText : this.props[qualifiedName];
-      return attr || null;
-    }
-  }, {
-    key: "dispatchEvent",
-    value: function dispatchEvent(event) {
-      var cancelable = event.cancelable;
-      var listeners = this.__handlers[event.type];
-
-      if (!isArray(listeners)) {
-        return;
-      }
-
-      for (var i = listeners.length; i--;) {
-        var listener = listeners[i];
-        var result = void 0;
-
-        if (listener._stop) {
-          listener._stop = false;
-        } else {
-          result = listener.call(this, event);
+        else {
+            this.props[qualifiedName] = value;
         }
-
-        if ((result === false || event._end) && cancelable) {
-          event.defaultPrevented = true;
-        }
-      }
-
-      if (event._stop) {
-        this._stopPropagation(event);
-      } else {
-        event._stop = true;
-      }
-
-      return listeners != null;
+        this.enqueueUpdate();
     }
-  }, {
-    key: "_stopPropagation",
-    value: function _stopPropagation(event) {
-      // eslint-disable-next-line @typescript-eslint/no-this-alias
-      var target = this; // eslint-disable-next-line no-cond-assign
-
-      while (target = target.parentNode) {
-        var listeners = target.__handlers[event.type];
-
+    removeAttribute(qualifiedName) {
+        if (qualifiedName === 'style') {
+            this.style.cssText = '';
+        }
+        else {
+            delete this.props[qualifiedName];
+        }
+        this.enqueueUpdate();
+    }
+    getAttribute(qualifiedName) {
+        const attr = qualifiedName === 'style' ? this.style.cssText : this.props[qualifiedName];
+        return attr || null;
+    }
+    get attributes() {
+        const propKeys = Object.keys(this.props);
+        const style = this.style.cssText;
+        const attrs = propKeys.map(p => ({ name: p, value: this.props[p] }));
+        return attrs.concat(style ? { name: 'style', value: style } : []);
+    }
+    get parentElement() {
+        if (this.parentNode instanceof TaroElement) {
+            return this.parentNode;
+        }
+        return null;
+    }
+    dispatchEvent(event) {
+        const cancelable = event.cancelable;
+        const listeners = this.__handlers[event.type];
         if (!isArray(listeners)) {
-          continue;
+            return;
         }
-
-        for (var i = listeners.length; i--;) {
-          var l = listeners[i];
-          l._stop = true;
+        for (let i = listeners.length; i--;) {
+            const listener = listeners[i];
+            let result;
+            if (listener._stop) {
+                listener._stop = false;
+            }
+            else {
+                result = listener.call(this, event);
+            }
+            if ((result === false || event._end) && cancelable) {
+                event.defaultPrevented = true;
+            }
         }
-      }
+        if (event._stop) {
+            this._stopPropagation(event);
+        }
+        else {
+            event._stop = true;
+        }
+        return listeners != null;
     }
-  }, {
-    key: "id",
-    get: function get() {
-      return this.getAttribute('id');
-    },
-    set: function set(val) {
-      this.setAttribute('id', val);
+    _stopPropagation(event) {
+        // eslint-disable-next-line @typescript-eslint/no-this-alias
+        let target = this;
+        // eslint-disable-next-line no-cond-assign
+        while ((target = target.parentNode)) {
+            const listeners = target.__handlers[event.type];
+            if (!isArray(listeners)) {
+                continue;
+            }
+            for (let i = listeners.length; i--;) {
+                const l = listeners[i];
+                l._stop = true;
+            }
+        }
     }
-  }, {
-    key: "className",
-    get: function get() {
-      return this.getAttribute('class') || '';
-    },
-    set: function set(val) {
-      this.setAttribute('class', val);
-    }
-  }, {
-    key: "cssText",
-    get: function get() {
-      return this.getAttribute('style');
-    }
-  }, {
-    key: "children",
-    get: function get() {
-      return this.childNodes.filter(isElement);
-    }
-  }, {
-    key: "attributes",
-    get: function get() {
-      var _this6 = this;
-
-      var propKeys = Object.keys(this.props);
-      var style = this.style.cssText;
-      var attrs = propKeys.map(function (p) {
-        return {
-          name: p,
-          value: _this6.props[p]
-        };
-      });
-      return attrs.concat(style ? {
-        name: 'style',
-        value: style
-      } : []);
-    }
-  }, {
-    key: "parentElement",
-    get: function get() {
-      if (this.parentNode instanceof TaroElement) {
-        return this.parentNode;
-      }
-
-      return null;
-    }
-  }]);
-
-  return TaroElement;
-}(TaroNode);
+}
 
 function hydrate(node) {
-  if (isText(node)) {
-    return {
-      nodeValue: node.nodeValue,
-      nodeName: node.nodeName
-    };
-  }
-
-  return {
-    cn: node.childNodes.map(hydrate),
-    nodeName: node.nodeName,
-    cl: node.className,
-    style: node.cssText || '',
-    uid: node.uid
-  };
+    if (isText(node)) {
+        return {
+            nodeValue: node.nodeValue,
+            nodeName: node.nodeName
+        };
+    }
+    return Object.assign(Object.assign({}, node.props), { cn: node.childNodes.map(hydrate), nodeName: node.nodeName, cl: node.className, style: node.cssText || '', uid: node.uid });
 }
 
-var TaroRootElement =
-/*#__PURE__*/
-function (_TaroElement) {
-  _inherits(TaroRootElement, _TaroElement);
-
-  function TaroRootElement() {
-    var _this7;
-
-    _classCallCheck(this, TaroRootElement);
-
-    _this7 = _possibleConstructorReturn(this, _getPrototypeOf(TaroRootElement).call(this, 1
-    /* ELEMENT_NODE */
-    , 'root'));
-    _this7.pendingUpdate = false;
-    _this7.ctx = null;
-    _this7._root = _assertThisInitialized(_this7);
-    return _this7;
-  }
-
-  _createClass(TaroRootElement, [{
-    key: "performUpdate",
-    value: function performUpdate() {
-      var _this8 = this;
-
-      if (this.pendingUpdate || this.ctx === null) {
-        return;
-      }
-
-      this.pendingUpdate = true;
-      var ctx = this.ctx;
-      setTimeout(function () {
-        ctx.setData({
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          root: hydrate(_this8)
-        }, function () {
-          _this8.pendingUpdate = false;
-        });
-      }, 1);
+class TaroRootElement extends TaroElement {
+    constructor() {
+        super(1 /* ELEMENT_NODE */, 'root');
+        this.pendingUpdate = false;
+        this.ctx = null;
+        this._root = this;
     }
-  }]);
-
-  return TaroRootElement;
-}(TaroElement);
-
-var TaroDocument =
-/*#__PURE__*/
-function (_TaroElement2) {
-  _inherits(TaroDocument, _TaroElement2);
-
-  function TaroDocument() {
-    _classCallCheck(this, TaroDocument);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(TaroDocument).call(this, 9
-    /* DOCUMENT_NODE */
-    , '#document'));
-  }
-
-  _createClass(TaroDocument, [{
-    key: "createElement",
-    value: function createElement(type) {
-      if (type === 'root') {
-        return new TaroRootElement();
-      }
-
-      return new TaroElement(1
-      /* ELEMENT_NODE */
-      , type);
+    performUpdate() {
+        if (this.pendingUpdate || this.ctx === null) {
+            return;
+        }
+        this.pendingUpdate = true;
+        const ctx = this.ctx;
+        setTimeout(() => {
+            ctx.setData({
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                root: hydrate(this)
+            }, () => {
+                this.pendingUpdate = false;
+            });
+        }, 1);
     }
-  }, {
-    key: "createTextNode",
-    value: function createTextNode(text) {
-      return new TaroText(text);
-    }
-  }, {
-    key: "getElementById",
-    value: function getElementById(id) {
-      return eventSource.get(id) || null;
-    }
-  }]);
+}
 
-  return TaroDocument;
-}(TaroElement);
-
+class TaroDocument extends TaroElement {
+    constructor() {
+        super(9 /* DOCUMENT_NODE */, '#document');
+    }
+    createElement(type) {
+        if (type === 'root') {
+            return new TaroRootElement();
+        }
+        return new TaroElement(1 /* ELEMENT_NODE */, type);
+    }
+    createTextNode(text) {
+        return new TaroText(text);
+    }
+    getElementById(id) {
+        return eventSource.get(id) || null;
+    }
+}
 function createDocument() {
-  var doc = new TaroDocument();
-  doc.appendChild(doc.documentElement = doc.createElement('html'));
-  doc.documentElement.appendChild(doc.head = doc.createElement('head'));
-  doc.documentElement.appendChild(doc.createElement('body'));
-  var app = doc.createElement('app');
-  app.id = 'app';
-  var container = doc.createElement('container'); // 多包一层主要为了兼容 vue
-
-  container.appendChild(app);
-  doc.documentElement.lastChild.appendChild(container);
-  return doc;
+    const doc = new TaroDocument();
+    doc.appendChild((doc.documentElement = doc.createElement('html')));
+    doc.documentElement.appendChild((doc.head = doc.createElement('head')));
+    doc.documentElement.appendChild((doc.createElement('body')));
+    const app = doc.createElement('app');
+    app.id = 'app';
+    const container = doc.createElement('container'); // 多包一层主要为了兼容 vue
+    container.appendChild(app);
+    doc.documentElement.lastChild.appendChild(container);
+    return doc;
 }
+const document = createDocument();
 
-var document = createDocument();
-var machine = 'Macintosh';
-var arch = 'Intel Mac OS X 10_14_5';
-var engine = 'AppleWebKit/534.36 (KHTML, like Gecko) NodeJS/v4.1.0 Chrome/76.0.3809.132 Safari/534.36';
-var navigator = {
-  appCodeName: 'Mozilla',
-  appName: 'Netscape',
-  appVersion: '5.0 (' + machine + '; ' + arch + ') ' + engine,
-  cookieEnabled: true,
-  mimeTypes: [],
-  onLine: true,
-  platform: 'MacIntel',
-  plugins: [],
-  product: 'Gecko',
-  productSub: '20030107',
-  userAgent: 'Mozilla/5.0 (' + machine + '; ' + arch + ') ' + engine,
-  vendor: 'Joyent',
-  vendorSub: ''
-};
-var window = {
-  navigator: navigator,
-  document: document
-};
-var Current = {
-  root: null,
-  pages: new Set(),
-  activeId: null,
-  app: null,
-  roots: new Set()
+const machine = 'Macintosh';
+const arch = 'Intel Mac OS X 10_14_5';
+const engine = 'AppleWebKit/534.36 (KHTML, like Gecko) NodeJS/v4.1.0 Chrome/76.0.3809.132 Safari/534.36';
+const navigator = {
+    appCodeName: 'Mozilla',
+    appName: 'Netscape',
+    appVersion: '5.0 (' + machine + '; ' + arch + ') ' + engine,
+    cookieEnabled: true,
+    mimeTypes: [],
+    onLine: true,
+    platform: 'MacIntel',
+    plugins: [],
+    product: 'Gecko',
+    productSub: '20030107',
+    userAgent: 'Mozilla/5.0 (' + machine + '; ' + arch + ') ' + engine,
+    vendor: 'Joyent',
+    vendorSub: ''
 };
 
-function createAppConfig(render) {
-  var framework = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'react';
-  var isReact = framework === 'react';
-  var config = {
-    onLaunch: function onLaunch() {
-      Current.app = render();
-    },
-    onShow: function onShow() {
-      var func = isReact ? Current.app.componentDidShow : Current.app.onShow;
+const window = {
+    navigator,
+    document
+};
 
-      if (isFunction(func)) {
-        func.call(Current.app);
-      }
-    },
-    onHide: function onHide() {
-      var func = isReact ? Current.app.componentDidHide : Current.app.onHide;
-
-      if (isFunction(func)) {
-        func.call(Current.app);
-      }
-    }
-  };
-  return config;
-}
-
-var instances = new Map();
-
-function injectPageInstance(derivedIDfromCompiler, inst) {
-  instances.set(derivedIDfromCompiler, inst);
-}
+const Current = {
+    root: null,
+    pages: new Set(),
+    activeId: null,
+    app: null,
+    roots: new Set()
+};
 
 function connectReactPage(h, // 为了支持 React 和 React-like
-derivedIDfromCompiler, PureComponent) {
-  return function (component) {
-    // 只有传入 props 产生变化才触发 render
-    var PageContainer =
-    /*#__PURE__*/
-    function (_PureComponent) {
-      _inherits(PageContainer, _PureComponent);
-
-      function PageContainer() {
-        _classCallCheck(this, PageContainer);
-
-        return _possibleConstructorReturn(this, _getPrototypeOf(PageContainer).apply(this, arguments));
-      }
-
-      _createClass(PageContainer, [{
-        key: "render",
-        value: function render() {
-          return h(component, this.props, this.props.children);
-        }
-      }]);
-
-      return PageContainer;
-    }(PureComponent);
-
-    return function (props) {
-      return Current.pages.has(derivedIDfromCompiler) ? h('root', {
-        id: derivedIDfromCompiler
-      }, h(PageContainer, props, props.children)) : null;
+id) {
+    return (component) => {
+        return (props) => {
+            return h('root', { id }, h(component, props));
+        };
     };
-  };
 }
-
-function connectVuePage(derivedIDfromCompiler) {
-  return function (component) {
-    var options = {
-      render: function render(h) {
-        return h('root', {
-          attrs: {
-            id: derivedIDfromCompiler
-          }
-        }, [Current.pages.has(derivedIDfromCompiler) && h(component, {
-          key: 'a'
-        })]);
-      },
-      created: function created() {
-        // Vue 的 forceUpdate 不会更新子组件，切换手动挡
-        Current.roots.add(this);
-      }
-    };
-    return options;
-  };
-}
-
-function updateVuePages(cb) {
-  Current.roots.forEach(function (inst) {
-    inst.$forceUpdate();
-  });
-  Current.app.$nextTick(cb);
-}
-
-function createPageConfig(derivedIDfromCompiler) {
-  var framework = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'react';
-  // 把复杂的 JavaScript 对象挂载在小程序实例上可能会触发意料之外的错误
-  var page;
-  var instance;
-  var isReact = framework === 'react';
-  var isVue = framework === 'vue';
-
-  function safeExecute(func) {
-    if (instance != null && isFunction(func)) {
-      for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        args[_key - 1] = arguments[_key];
-      }
-
-      func.apply(instance, args);
-    }
-  }
-
-  var config = {
-    eh: function eh(event) {
-      var node = document.getElementById(event.currentTarget.id);
-
-      if (node != null) {
-        node.dispatchEvent(createEvent(event));
-      }
-    },
-    onLoad: function onLoad() {
-      var _this9 = this;
-
-      Current.pages.add(derivedIDfromCompiler);
-      instance = instances.get(derivedIDfromCompiler) || EMPTY_OBJ;
-
-      var render = function render() {
-        page = document.getElementById(derivedIDfromCompiler);
-
-        if (page === null) {
-          return;
+function createReactApp(R, App, render) {
+    const ref = R.createRef();
+    let wrapper;
+    class AppWrapper extends R.Component {
+        constructor() {
+            super(...arguments);
+            // run createElement() in a render function to make sure that owner is right
+            this.pages = [];
+            this.elements = [];
         }
-
-        page.ctx = _this9;
-        page.performUpdate();
-      };
-
-      if (isReact) {
-        Current.app.forceUpdate(render);
-      }
-
-      if (isVue) {
-        updateVuePages(render);
-        render();
-      }
-    },
-    onUnload: function onUnload() {
-      Current.pages["delete"](derivedIDfromCompiler);
-      instances["delete"](derivedIDfromCompiler);
-
-      if (isReact) {
-        Current.app.forceUpdate(function () {
-          return page.ctx = null;
-        });
-      }
-
-      if (isVue) {
-        updateVuePages(function () {
-          return page.ctx = null;
-        });
-      }
-    },
-    onShow: function onShow() {
-      safeExecute(isReact ? instance.componentDidShow : instance.onShow);
-    },
-    onHide: function onHide() {
-      safeExecute(isReact ? instance.componentDidHide : instance.onHide);
-    },
-    onPullDownRefresh: function onPullDownRefresh() {
-      safeExecute(instance.onPullDownRefresh);
-    },
-    onReachBottom: function onReachBottom() {
-      safeExecute(instance.onReachBottom);
-    },
-    onPageScroll: function onPageScroll(options) {
-      safeExecute(instance.onPageScroll, options);
-    },
-    onShareAppMessage: function onShareAppMessage(options) {
-      safeExecute(instance.onShareAppMessage, options);
-    },
-    onResize: function onResize(options) {
-      safeExecute(instance.onResize, options);
-    },
-    onTabItemTap: function onTabItemTap(options) {
-      safeExecute(instance.onTabItemTap, options);
-    },
-    onTitleClick: function onTitleClick() {
-      safeExecute(instance.onTitleClick);
-    },
-    onOptionMenuClick: function onOptionMenuClick() {
-      safeExecute(instance.onOptionMenuClick);
-    },
-    onPopMenuClick: function onPopMenuClick() {
-      safeExecute(instance.onPopMenuClick);
-    },
-    onPullIntercept: function onPullIntercept() {
-      safeExecute(instance.onPullIntercept);
+        mount(component, id, cb) {
+            const page = () => R.createElement(component, { key: id, tid: id });
+            this.pages.push(page);
+            this.forceUpdate(cb);
+        }
+        unmount(id, cb) {
+            for (let i = 0; i < this.elements.length; i++) {
+                const element = this.elements[i];
+                if (element.key === id) {
+                    this.elements.splice(i, 1);
+                    break;
+                }
+            }
+            this.forceUpdate(cb);
+        }
+        render() {
+            while (this.pages.length > 0) {
+                const page = this.pages.pop();
+                this.elements.push(page());
+            }
+            return R.createElement(App, { ref }, this.elements.slice());
+        }
     }
-  };
-  return config;
+    class AppConfig {
+        onLaunch() {
+            wrapper = render(R.createElement(AppWrapper), document.getElementById('app'));
+        }
+        onShow(options) {
+            const app = ref.current;
+            if (app != null && isFunction(app.componentDidShow)) {
+                app.componentDidShow(options);
+            }
+        }
+        onHide(options) {
+            const app = ref.current;
+            if (app != null && isFunction(app.componentDidHide)) {
+                app.componentDidHide(options);
+            }
+        }
+        render(cb) {
+            wrapper.forceUpdate(cb);
+        }
+        mount(component, id, cb) {
+            const page = connectReactPage(R.createElement, id)(component);
+            wrapper.mount(page, id, cb);
+        }
+        unmount(id, cb) {
+            wrapper.unmount(id, cb);
+        }
+    }
+    Current.app = new AppConfig();
+    return Current.app;
+}
+
+const instances = new Map();
+function injectPageInstance(inst) {
+    const id = inst.tid != null ? inst.tid : inst.props.tid;
+    if (id != null) {
+        instances.set(id, inst);
+    }
+}
+const pageId = incrementId();
+function createPageConfig(component) {
+    const id = `taro_page_${pageId()}`;
+    // 小程序 Page 构造器是一个傲娇小公主，不能把复杂的对象挂载到参数上
+    let page;
+    let instance = EMPTY_OBJ;
+    const isReact = "vue" !== 'vue'; // isReact means all kind of react-like library
+    function safeExecute(func, ...args) {
+        if (instance != null && isFunction(func)) {
+            func.apply(instance, args);
+        }
+    }
+    const config = {
+        eh(event) {
+            const node = document.getElementById(event.currentTarget.id);
+            if (node != null) {
+                node.dispatchEvent(createEvent(event));
+            }
+        },
+        onLoad() {
+            Current.app.mount(component, id, () => {
+                page = document.getElementById(id);
+                instance = instances.get(id) || EMPTY_OBJ;
+                if (page === null) {
+                    return;
+                }
+                page.ctx = this;
+                page.performUpdate();
+            });
+        },
+        onUnload() {
+            Current.app.unmount(id, () => {
+                page.ctx = null;
+            });
+        },
+        onShow() {
+            safeExecute(isReact ? instance.componentDidShow : instance.$options.onShow);
+        },
+        onHide() {
+            safeExecute(isReact ? instance.componentDidHide : instance.$options.onHide);
+        },
+        onPullDownRefresh() {
+            safeExecute(instance.onPullDownRefresh);
+        },
+        onReachBottom() {
+            safeExecute(instance.onReachBottom);
+        },
+        onPageScroll(options) {
+            safeExecute(instance.onPageScroll, options);
+        },
+        onShareAppMessage(options) {
+            safeExecute(instance.onShareAppMessage, options);
+        },
+        onResize(options) {
+            safeExecute(instance.onResize, options);
+        },
+        onTabItemTap(options) {
+            safeExecute(instance.onTabItemTap, options);
+        },
+        onTitleClick() {
+            safeExecute(instance.onTitleClick);
+        },
+        onOptionMenuClick() {
+            safeExecute(instance.onOptionMenuClick);
+        },
+        onPopMenuClick() {
+            safeExecute(instance.onPopMenuClick);
+        },
+        onPullIntercept() {
+            safeExecute(instance.onPullIntercept);
+        }
+    };
+    return config;
+}
+function createComponentConfig() {
+    return {
+        eh(event) {
+            const node = document.getElementById(event.currentTarget.id);
+            if (node != null) {
+                node.dispatchEvent(createEvent(event));
+            }
+        }
+    };
+}
+
+function connectVuePage(Vue, id) {
+    return (component) => {
+        const injectedPage = Vue.extend({
+            props: {
+                tid: String
+            },
+            mixins: [component, {
+                    created() {
+                        injectPageInstance(this);
+                    }
+                }]
+        });
+        const options = {
+            render(h) {
+                return h('root', {
+                    attrs: {
+                        id
+                    }
+                }, [
+                    h(injectedPage, { props: { tid: id } })
+                ]);
+            }
+        };
+        return options;
+    };
+}
+function createVueApp(Vue, App) {
+    const elements = [];
+    const pages = [];
+    let appInstance;
+    const wrapper = new Vue({
+        render(h) {
+            while (pages.length > 0) {
+                const page = pages.pop();
+                elements.push(page(h));
+            }
+            return h(App.$options, { ref: 'app' }, elements.slice());
+        },
+        methods: {
+            mount(component, id, cb) {
+                pages.push((h) => h(component, { key: id }));
+                this.updateSync(cb);
+            },
+            updateSync(cb) {
+                this._update(this._render(), false);
+                this.$children.forEach((child) => child._update(child._render(), false));
+                cb();
+            },
+            unmount(id, cb) {
+                for (let i = 0; i < elements.length; i++) {
+                    const element = elements[i];
+                    if (element.key === id) {
+                        elements.splice(i, 1);
+                        break;
+                    }
+                }
+                this.updateSync(cb);
+            }
+        }
+    });
+    // comp.$options
+    class AppConfig {
+        onLaunch() {
+            wrapper.$mount(document.getElementById('app'));
+            appInstance = wrapper.$refs.app;
+        }
+        onShow(options) {
+            if (appInstance != null && isFunction(appInstance.$options.onShow)) {
+                appInstance.$options.onShow.call(appInstance, options);
+            }
+        }
+        onHide(options) {
+            if (appInstance != null && isFunction(appInstance.$options.onHide)) {
+                appInstance.$options.onHide.call(appInstance, options);
+            }
+        }
+        mount(component, id, cb) {
+            const page = connectVuePage(Vue, id)(component);
+            wrapper.mount(page, id, cb);
+        }
+        unmount(id, cb) {
+            wrapper.unmount(id, cb);
+        }
+    }
+    Current.app = new AppConfig();
+    return Current.app;
 }
 
 
+//# sourceMappingURL=index.esm.js.map
 
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/app.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--1!./node_modules/vue-loader/lib??vue-loader-options!./src/app.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tarojs/runtime */ "../taro/packages/taro-runtime/dist/index.esm.js");
-/* harmony import */ var _index_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue */ "./src/index.vue");
-//
-//
-//
-//
-//
-//
-
- // import Second, { TARO_PAGE_ID as page1 } from './second.vue'
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    Index: Object(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__["connectVuePage"])(_index_vue__WEBPACK_IMPORTED_MODULE_1__["TARO_PAGE_ID"])(_index_vue__WEBPACK_IMPORTED_MODULE_1__["default"])
-  }
-});
 
 /***/ }),
 
@@ -1211,13 +1420,11 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--1!./node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=script&lang=js& ***!
   \******************************************************************************************************************************************/
-/*! exports provided: TARO_PAGE_ID, default */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TARO_PAGE_ID", function() { return TARO_PAGE_ID; });
-/* harmony import */ var _tarojs_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tarojs/runtime */ "../taro/packages/taro-runtime/dist/index.esm.js");
 //
 //
 //
@@ -1229,8 +1436,66 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      color: ''
+    };
+  },
+  methods: {
+    exampleParentOnTap: function exampleParentOnTap(e) {
+      console.log('parent is fired', e);
+    },
+    exampleOnTap: function exampleOnTap(e) {
+      console.log('example is fired', e);
+    },
+    changeColor: function changeColor() {
+      this.color = this.color ? '' : 'red';
+    },
+    "goto": function goto() {
+      wx.navigateTo({
+        url: '/pages/logs/logs'
+      });
+    }
+  },
+  fuck: 'you',
+  created: function created() {
+    // debugger
+    console.log('created');
+  },
+  onShow: function onShow() {
+    console.log('onshow');
+  },
+  onHide: function onHide() {
+    console.log('onHide');
+  },
+  filters: {
+    colorName: function colorName(color) {
+      return color ? 'red' : 'black';
+    }
+  }
+});
 
-var TARO_PAGE_ID = 'taro_page_id_1';
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/second.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--1!./node_modules/vue-loader/lib??vue-loader-options!./src/second.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1253,7 +1518,7 @@ var TARO_PAGE_ID = 'taro_page_id_1';
   },
   filters: {
     colorName: function colorName(color) {
-      return color ? 'red' : 'black';
+      return color ? 'blue' : 'yellow';
     }
   }
 });
@@ -1724,31 +1989,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! @tarojs/runtime */ "../taro/packages/taro-runtime/dist/index.esm.js")["window"]))
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/app.vue?vue&type=template&id=5ef48958&":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/app.vue?vue&type=template&id=5ef48958& ***!
-  \**********************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("view", [_c("index")], 1)
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/runtime/dist/index.esm.js")["window"]))
 
 /***/ }),
 
@@ -1784,6 +2025,42 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
+    _c(
+      "view",
+      {
+        staticClass: "list",
+        style: { color: _vm.color },
+        on: { tap: _vm.changeColor }
+      },
+      [_vm._v("\n    " + _vm._s(_vm._f("colorName")(_vm.color)) + "\n  ")]
+    ),
+    _vm._v(" "),
+    _c("button", { on: { tap: _vm.goto } }, [_vm._v("goto todo")])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/second.vue?vue&type=template&id=1ae780e6&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./src/second.vue?vue&type=template&id=1ae780e6& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("view", { staticClass: "root" }, [
     _c(
       "view",
       {
@@ -3846,7 +4123,9 @@ var timerFunc;
 if (typeof Promise !== 'undefined' && isNative(Promise)) {
   var p = Promise.resolve();
   timerFunc = function () {
-    p.then(flushCallbacks);
+    p.then(() => {
+      flushCallbacks()
+    });
     // In problematic UIWebViews, Promise.then doesn't completely break, but
     // it can get stuck in a weird state where callbacks are pushed into the
     // microtask queue but the queue isn't being flushed, until the browser
@@ -10348,7 +10627,7 @@ if (inBrowser) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! @tarojs/runtime */ "../taro/packages/taro-runtime/dist/index.esm.js")["window"], __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! @tarojs/runtime */ "../taro/packages/taro-runtime/dist/index.esm.js")["document"], __webpack_require__(/*! ./../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/runtime/dist/index.esm.js")["window"], __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/runtime/dist/index.esm.js")["document"], __webpack_require__(/*! ./../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
 
 /***/ }),
 
@@ -10380,7 +10659,7 @@ try {
 
 module.exports = g;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! @tarojs/runtime */ "../taro/packages/taro-runtime/dist/index.esm.js")["window"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/runtime/dist/index.esm.js")["window"]))
 
 /***/ }),
 
@@ -10388,101 +10667,38 @@ module.exports = g;
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! exports provided: default, createAppConfig, createPageConfig, connectVuePage */
+/*! exports provided: default, createPageConfig, createVueApp, Index, Second, Vue */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm.js");
-/* harmony import */ var _app_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.vue */ "./src/app.vue");
-/* harmony import */ var _tarojs_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tarojs/runtime */ "../taro/packages/taro-runtime/dist/index.esm.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createAppConfig", function() { return _tarojs_runtime__WEBPACK_IMPORTED_MODULE_2__["createAppConfig"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Vue", function() { return vue__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createPageConfig", function() { return _tarojs_runtime__WEBPACK_IMPORTED_MODULE_2__["createPageConfig"]; });
+/* harmony import */ var _index_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue */ "./src/index.vue");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Index", function() { return _index_vue__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "connectVuePage", function() { return _tarojs_runtime__WEBPACK_IMPORTED_MODULE_2__["connectVuePage"]; });
+/* harmony import */ var _second_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./second.vue */ "./src/second.vue");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Second", function() { return _second_vue__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+/* harmony import */ var _tarojs_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tarojs/runtime */ "./node_modules/@tarojs/runtime/dist/index.esm.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createPageConfig", function() { return _tarojs_runtime__WEBPACK_IMPORTED_MODULE_3__["createPageConfig"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "createVueApp", function() { return _tarojs_runtime__WEBPACK_IMPORTED_MODULE_3__["createVueApp"]; });
 
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  var app = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
-    render: function render(h) {
-      return h(_app_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
-    }
-  });
-  app.$mount(_tarojs_runtime__WEBPACK_IMPORTED_MODULE_2__["document"].getElementById('app'));
-  return app;
+
+var app = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
+  onShow: function onShow(options) {
+    console.log('app onshow', options);
+  },
+  render: function render(h) {
+    return h('block', this.$slots["default"]);
+  }
 });
-
-
-/***/ }),
-
-/***/ "./src/app.vue":
-/*!*********************!*\
-  !*** ./src/app.vue ***!
-  \*********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _app_vue_vue_type_template_id_5ef48958___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.vue?vue&type=template&id=5ef48958& */ "./src/app.vue?vue&type=template&id=5ef48958&");
-/* harmony import */ var _app_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.vue?vue&type=script&lang=js& */ "./src/app.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _app_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _app_vue_vue_type_template_id_5ef48958___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _app_vue_vue_type_template_id_5ef48958___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "src/app.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./src/app.vue?vue&type=script&lang=js&":
-/*!**********************************************!*\
-  !*** ./src/app.vue?vue&type=script&lang=js& ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_1_node_modules_vue_loader_lib_index_js_vue_loader_options_app_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../node_modules/babel-loader/lib??ref--1!../node_modules/vue-loader/lib??vue-loader-options!./app.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/app.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_1_node_modules_vue_loader_lib_index_js_vue_loader_options_app_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./src/app.vue?vue&type=template&id=5ef48958&":
-/*!****************************************************!*\
-  !*** ./src/app.vue?vue&type=template&id=5ef48958& ***!
-  \****************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_app_vue_vue_type_template_id_5ef48958___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib??vue-loader-options!./app.vue?vue&type=template&id=5ef48958& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/app.vue?vue&type=template&id=5ef48958&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_app_vue_vue_type_template_id_5ef48958___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_app_vue_vue_type_template_id_5ef48958___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
+/* harmony default export */ __webpack_exports__["default"] = (app);
 
 
 /***/ }),
@@ -10491,16 +10707,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************!*\
   !*** ./src/index.vue ***!
   \***********************/
-/*! exports provided: default, TARO_PAGE_ID */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_vue_vue_type_template_id_2964abc9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=2964abc9& */ "./src/index.vue?vue&type=template&id=2964abc9&");
 /* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue?vue&type=script&lang=js& */ "./src/index.vue?vue&type=script&lang=js&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TARO_PAGE_ID", function() { return _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["TARO_PAGE_ID"]; });
-
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -10530,15 +10744,13 @@ component.options.__file = "src/index.vue"
 /*!************************************************!*\
   !*** ./src/index.vue?vue&type=script&lang=js& ***!
   \************************************************/
-/*! exports provided: default, TARO_PAGE_ID */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_1_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../node_modules/babel-loader/lib??ref--1!../node_modules/vue-loader/lib??vue-loader-options!./index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/index.vue?vue&type=script&lang=js&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TARO_PAGE_ID", function() { return _node_modules_babel_loader_lib_index_js_ref_1_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["TARO_PAGE_ID"]; });
-
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_1_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_1_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -10555,6 +10767,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_2964abc9___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_2964abc9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./src/second.vue":
+/*!************************!*\
+  !*** ./src/second.vue ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _second_vue_vue_type_template_id_1ae780e6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./second.vue?vue&type=template&id=1ae780e6& */ "./src/second.vue?vue&type=template&id=1ae780e6&");
+/* harmony import */ var _second_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./second.vue?vue&type=script&lang=js& */ "./src/second.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _second_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _second_vue_vue_type_template_id_1ae780e6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _second_vue_vue_type_template_id_1ae780e6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "src/second.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./src/second.vue?vue&type=script&lang=js&":
+/*!*************************************************!*\
+  !*** ./src/second.vue?vue&type=script&lang=js& ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_1_node_modules_vue_loader_lib_index_js_vue_loader_options_second_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../node_modules/babel-loader/lib??ref--1!../node_modules/vue-loader/lib??vue-loader-options!./second.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./src/second.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_1_node_modules_vue_loader_lib_index_js_vue_loader_options_second_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./src/second.vue?vue&type=template&id=1ae780e6&":
+/*!*******************************************************!*\
+  !*** ./src/second.vue?vue&type=template&id=1ae780e6& ***!
+  \*******************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_second_vue_vue_type_template_id_1ae780e6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib??vue-loader-options!./second.vue?vue&type=template&id=1ae780e6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./src/second.vue?vue&type=template&id=1ae780e6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_second_vue_vue_type_template_id_1ae780e6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_second_vue_vue_type_template_id_1ae780e6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

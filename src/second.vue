@@ -7,8 +7,6 @@
 </template>
 
 <script>
-import { connectVuePage } from '@tarojs/runtime'
-export const TARO_PAGE_ID = 'taro_page_id_1'
 
 export default {
   data() {

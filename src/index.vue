@@ -6,13 +6,11 @@
     <view class="list" :style="{ color }" @tap="changeColor">
       {{ color | colorName }}
     </view>
+    <button @tap="goto">goto todo</button>
   </view>
 </template>
 
 <script>
-import { connectVuePage } from '@tarojs/runtime'
-export const TARO_PAGE_ID = 'taro_page_id_1'
-
 export default {
   data() {
     return {
@@ -28,10 +26,21 @@ export default {
     },
     changeColor() {
       this.color = this.color ? '' : 'red'
+    },
+    goto () {
+      wx.navigateTo({ url: '/pages/logs/logs' })
     }
   },
+  fuck: 'you',
   created () {
+    // debugger
     console.log('created')
+  },
+  onShow () {
+    console.log('onshow')
+  },
+  onHide () {
+    console.log('onHide')
   },
   filters: {
     colorName (color) {

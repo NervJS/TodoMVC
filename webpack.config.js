@@ -28,9 +28,15 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    symlinks: false
+  },
   mode: 'development',
   devtool: false,
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.framework': JSON.stringify('vue')
+    }),
     new webpack.ProvidePlugin({
       'document': ['@tarojs/runtime', 'document'],
       'window': ['@tarojs/runtime', 'window']

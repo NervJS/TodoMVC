@@ -1,4 +1,4 @@
-const render = require('./dist/index').default
-const { createAppConfig } = require('./dist/index')
+const app = require('./dist/index').default
+const { createVueApp, Vue } = require('./dist/index')
 
-App(createAppConfig(render, 'vue'))
+App(createVueApp(Vue, app))

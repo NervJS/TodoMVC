@@ -1,13 +1,17 @@
 import Vue from 'vue'
-import TodoMVC from './app.vue';
-import { document, createAppConfig, createPageConfig, connectVuePage } from '@tarojs/runtime'
+import Index from './index.vue'
+import Second from './second.vue'
+import { createPageConfig, createVueApp } from '@tarojs/runtime'
 
-export default () => {
-  const app = new Vue({
-    render: h => h(TodoMVC)
-  })
-  app.$mount(document.getElementById('app'))
-  return app
-}
+const app = new Vue({
+  onShow (options) {
+    console.log('app onshow', options)
+  },
+  render(h) {
+    return h('block', this.$slots.default)
+  }
+})
 
-export { createAppConfig, createPageConfig, connectVuePage }
+export default app
+
+export { createPageConfig, createVueApp, Index, Second, Vue }
