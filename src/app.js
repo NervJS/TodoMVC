@@ -1,7 +1,4 @@
 import Vue from 'vue'
-import Index from './index.vue'
-import Second from './second.vue'
-import { createPageConfig, createVueApp } from '@tarojs/runtime'
 
 const app = new Vue({
   onShow (options) {
@@ -13,5 +10,3 @@ const app = new Vue({
 })
 
 export default app
-
-export { createPageConfig, createVueApp, Index, Second, Vue }

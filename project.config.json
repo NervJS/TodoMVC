@@ -11,10 +11,11 @@
 		"newFeature": true,
 		"autoAudits": false,
 		"coverView": true
-	},
+  },
+  "miniprogramRoot": "dist/",
 	"compileType": "miniprogram",
 	"libVersion": "2.8.3",
-	"appid": "wxd964da35ecfc1f3e",
+	"appid": "wx48fd2ad16f95f865",
 	"projectname": "next-vue-demo",
 	"debugOptions": {
 		"hidedInDevtools": []
