@@ -7,6 +7,9 @@
       {{ color | colorName }}
     </view>
     <button @tap="goto">goto todo</button>
+    <!-- <input @input="onInput" placeholder="fuckyou" :value="msg" /> -->
+    <input placeholder="fuckyou" v-model="msg" />
+    <view>{{ msg }}</view>
   </view>
 </template>
 
@@ -14,10 +17,14 @@
 export default {
   data() {
     return {
-      color: ''
+      color: '',
+      msg: ''
     }
   },
   methods: {
+    onInput (e) {
+      this.msg = e.detail.value
+    },
     exampleParentOnTap (e) {
       console.log('parent is fired', e)
     },
