@@ -1,10 +1,293 @@
-/**app.wxss**/
-.container {
-  height: 100%;
+/*postcss-pxtransform rn eject enable*/
+.footer:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+  0 8px 0 -3px #f6f6f6,
+  0 9px 1px -3px rgba(0, 0, 0, 0.2),
+  0 16px 0 -6px #f6f6f6,
+  0 17px 2px -6px rgba(0, 0, 0, 0.2);
+}
+
+/*postcss-pxtransform rn eject disable*/
+
+.footer {
+  padding: 25px 30px;
+  border-top-width: 2px;
+  border-top-color: #e6e6e6;
+  border-style: solid;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+
+.todo-count {
+  flex: 1;
+  color: #777;
+}
+
+.todo-count .strong {
+  font-weight: 600;
+}
+
+.clear-completed {
+  display: flex;
+  color: #777;
+  justify-content: flex-end;
+}
+
+@media (max-width: 430px) {
+  .footer {
+    height: 50px;
+  }
+}
+
+.title {
+  width: 100%;
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  color: rgba(175, 47, 47, 0.55);
+  //-webkit-text-rendering: optimizeLegibility;
+  //-moz-text-rendering: optimizeLegibility;
+  //text-rendering: optimizeLegibility;
+}
+
+.header-title-wrap {
+  display: flex;
+  background-color: #F5F5F5;
+}
+
+.textinput-wrap {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
+  border: 1px solid #e6e6e6;
+}
+
+.textinput-wrap-icon {
+  font-size: 44px;
+  color: #e6e6e6;
+  padding: 20px 54px 20px 54px;
+  transform: rotate(90deg);
+}
+
+.icon-all-done {
+	color: #737373;
+}
+
+.todo-text-input {
+  flex: 1;
+}
+
+.textinput-wrap-input {
+  flex: 1;
+}
+
+.filters {
+  display: flex;
+  font-weight: 400;
+  padding: 0 10px;
+  flex-direction: row;
+  background-color: #F5F5F5;
+}
+
+.filters-item {
+  margin: 6px;
+}
+
+.filters-link {
+  display: flex;
+  padding: 6px 14px;
+  // transparent 不支持？？ TODO
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+.filters-link:hover {
+  border-color:  #efd5d5;
+}
+
+.selected {
+  border-color:  #efd5d5;
+  border-width: 2px;
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+  border-top-width: 1px;
+  border-style: solid;
+  border-top-color: #e6e6e6;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+.checkbox-group {
+  margin-bottom: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  margin: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+.new-todo {
+	position: relative;
+	top: 12px;
+	left: 8px;
+}
+
+.li {
+	position: relative;
+  padding-left: 20px;
+	border-bottom: 1px solid #ededed;
+}
+
+.last-child {
+	border-bottom: none;
+}
+
+.li .editing {
+	border-bottom: none;
+  padding: 0;
+  height: 80px;
+}
+
+.li .editing .edit {
+	display: block;
+	width: calc(100% - 115px);
+  position: relative;
+  left: 100px;
+	margin: 0;
+	font-size: 30px;
+  font-family: inherit;
+  line-height: 65px;
+  height: 65px;
+	border: 0;
+	color: inherit;
+	padding: 6px;
+	border: 1px solid #999;
+	box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.li .editing .view {
+	display: none;
+}
+
+.li .checkbox {
+  opacity: 0;
+}
+
+.toggle {
+  display: flex;
+  align-content: center;
+  // padding: 15px 15px 15px 60px;
+  height: 80px;
+}
+
+
+.li .label {
+	/*
+		Firefox requires `#` to be escaped - https://bugzilla.mozilla.org/show_bug.cgi?id=922433
+		IE and Edge requires *everything* to be escaped to render, so we do that instead of just the `#` - https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7157459/
+	*/
+	background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');
+	background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 45px;
+  padding-right: 60px;
+	// display: block;
+	line-height: 100px;
+}
+
+.li .label.checked {
+	background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23bddad5%22%20stroke-width%3D%223%22/%3E%3Cpath%20fill%3D%22%235dc2af%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22/%3E%3C/svg%3E');
+}
+
+.li .text {
+  flex: 1;
+  // height: 40px;
+	// line-height: 80px;
+	position: relative;
+	top: -20px;
+	left: 4px;
+}
+
+.li .text {
+  word-break: break-all;
+	// display: block;
+  transition: color 0.4s;
+	font-size: 30px;
+}
+
+.li .completed .text {
+	color: #d9d9d9;
+	text-decoration: line-through;
+}
+
+.li .destroy {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	bottom: 0;
+	width: 40px;
+  height: 40px;
+  line-height: 70px;
+	font-size: 50px;
+	color: #cc9a9a;
+	margin-bottom: 11px;
+	transition: color 0.2s ease-out;
+}
+
+.li .destroy:hover {
+	color: #af5b5e;
+}
+
+.li .destroy:after {
+	content: '×';
+}
+
+.li:hover .destroy {
+	display: block;
+}
+
+.li .edit {
+	display: none;
+}
+
+.info {
+	margin: 65px auto 0;
+	color: #bfbfbf;
+	font-size: 24px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	text-align: center;
+}
+
+.info .p {
+	line-height: 1.4;
+}
+
+.info .a {
+	color: inherit;
+	text-decoration: none;
+	font-weight: 600;
 }
