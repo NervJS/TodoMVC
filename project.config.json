@@ -11,8 +11,8 @@
 		"newFeature": true,
 		"autoAudits": false,
 		"coverView": true
-  },
-  "miniprogramRoot": "dist/",
+	},
+	"miniprogramRoot": "dist/",
 	"compileType": "miniprogram",
 	"libVersion": "2.8.3",
 	"appid": "wx48fd2ad16f95f865",

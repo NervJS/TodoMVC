@@ -37,11 +37,11 @@
               >
             </view>
             <view v-else class='toggle'>
-              <label
+              <text
                 :class="{ label: true, checked: todo.completed }"
                 @tap="todo.completed = !todo.completed"
               >
-              </label>
+              </text>
               <todo-item
                 :todo="todo"
                 :edit="editTodo"
