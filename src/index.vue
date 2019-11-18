@@ -14,8 +14,7 @@
         <view class='textinput-wrap-input'>
           <input class="new-todo"
           placeholder="What needs to be done?"
-          :value="newTodo"
-          @input="changeInput"
+          v-model="newTodo"
           @confirm="addTodo">
         </view>
       </view>
@@ -29,7 +28,7 @@
         >
           <view :class="{ completed: todo.completed, editing: todo == editedTodo }">
             <view class="edit" v-if="todo == editedTodo">
-              <input class="new-todo" type="text"
+              <input class="edit-todo" type="text"
                 v-model="todo.title"
                 v-todo-focus="todo == editedTodo"
                 @blur="doneEdit(todo)"
@@ -70,6 +69,8 @@
 <script>
 import TodoItem from './todo-item.vue'
 import './app.scss'
+
+// modified from: https://vuejs.org/v2/examples/todomvc.html
 var STORAGE_KEY = 'todos-vuejs-2.0'
 var todoStorage = {
   fetch: function () {
@@ -156,9 +157,6 @@ export default {
   // methods that implement data logic.
   // note there's no DOM manipulation here at all.
   methods: {
-    changeInput (e) {
-      this.newTodo = e.target.value
-    },
     addTodo: function () {
       var value = this.newTodo && this.newTodo.trim()
       if (!value) {
@@ -212,8 +210,7 @@ export default {
   directives: {
     'todo-focus': function (el, binding) {
       if (binding.value) {
-        console.log('focus()')
-        // el.focus()
+        el.focus()
       }
     }
   }

@@ -1,3 +1,5 @@
+// modified from: https://github.com/tastejs/todomvc
+
 /*postcss-pxtransform rn eject enable*/
 .footer:before {
   content: '';
@@ -152,8 +154,12 @@
 
 .new-todo {
 	position: relative;
-	top: 12px;
-	left: 8px;
+}
+
+.edit-todo {
+  position: relative;
+  top: 12px;
+  left: 8px;
 }
 
 .li {
