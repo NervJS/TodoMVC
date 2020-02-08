@@ -5,16 +5,24 @@
 	},
 	"setting": {
 		"urlCheck": true,
-		"es6": true,
+		"es6": false,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"coverView": true,
 		"autoAudits": false,
-		"coverView": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"miniprogramRoot": "dist/",
 	"compileType": "miniprogram",
-	"libVersion": "2.8.3",
+	"libVersion": "2.9.4",
 	"appid": "wx48fd2ad16f95f865",
 	"projectname": "next-vue-demo",
 	"debugOptions": {
