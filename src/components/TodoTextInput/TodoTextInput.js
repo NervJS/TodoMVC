@@ -1,10 +1,11 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro from '@tarojs/taro'
+import React from 'react'
 import classnames from 'classnames'
 import { Input } from '@tarojs/components'
 
 import './TodoTextInput.scss'
 
-export default class TodoTextInput extends Component {
+export default class TodoTextInput extends React.Component {
   state = {
     todoText: this.props.text || ''
   }

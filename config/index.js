@@ -6,6 +6,7 @@ const config = {
   designWidth: 750,
   sourceRoot: 'src',
   outputRoot: 'dist',
+  framework: 'react',
   plugins: {
     babel: {
       sourceMap: true,

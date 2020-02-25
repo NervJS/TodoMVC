@@ -1,11 +1,12 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro from '@tarojs/taro'
+import React from 'react'
 import { View, Checkbox, Label, CheckboxGroup, Text } from '@tarojs/components'
 import classnames from 'classnames'
 
 import TodoTextInput from '../TodoTextInput/TodoTextInput'
 import './TodoItem.scss'
 
-export default class TodoItem extends Component {
+export default class TodoItem extends React.Component {
   static defaultProps = {
     todo: {}
   }

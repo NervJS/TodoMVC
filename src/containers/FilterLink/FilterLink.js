@@ -1,5 +1,6 @@
 import { connect } from '@tarojs/redux'
-import Taro, { Component } from '@tarojs/taro'
+import Taro from '@tarojs/taro'
+import React from 'react'
 import { Text } from '@tarojs/components'
 import classnames from 'classnames'
 
@@ -28,7 +29,7 @@ const mapDispatchToProps = (dispatch) => ({
   mapStateToProps,
   mapDispatchToProps
 )
-export default class FilterLink extends Component {
+export default class FilterLink extends React.Component {
   onClickHandler = () => {
     console.log('onClickHandler', this.props.filter)
     this.props.setFilter(this.props.filter)

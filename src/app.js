@@ -1,11 +1,10 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro from '@tarojs/taro'
+import React from 'react'
 import { Provider } from '@tarojs/redux'
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import '@tarojs/async-await'
 
 import reducer from './reducers'
-import Index from './pages/index'
 
 import './app.scss'
 
@@ -14,7 +13,7 @@ const store = createStore(reducer, composeWithDevTools(
   // other store enhancers if any
 ))
 
-class App extends Component {
+class App extends React.Component {
   config = {
     pages: [
       'pages/index/index'
@@ -38,10 +37,10 @@ class App extends Component {
   render () {
     return (
       <Provider store={store}>
-        <Index/>
+        {this.props.children}
       </Provider>
     )
   }
 }
 
-Taro.render(<App/>, document.getElementById('app'))
+export default App

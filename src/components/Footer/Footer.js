@@ -1,9 +1,10 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro from '@tarojs/taro'
+import React from 'react'
 import { View, Text } from '@tarojs/components'
 
 import './Footer.scss'
 
-export default class Footer extends Component {
+export default class Footer extends React.Component {
 
   onClearCompleted = () => {
     console.log('onClearCompleted')

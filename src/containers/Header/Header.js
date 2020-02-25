@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro from '@tarojs/taro'
+import React from 'react'
 import { View, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { bindActionCreators } from 'redux'
@@ -22,7 +23,7 @@ const mapDispatchToProps = dispatch => ({
   () => ({}),
   mapDispatchToProps
 )
-export default class Header extends Component {
+export default class Header extends React.Component {
   onCheckClickHandler = () => {
     console.log('onCheckClickHandler')
     const {actions} = this.props

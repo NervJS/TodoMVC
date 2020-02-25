@@ -1,6 +1,7 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro from '@tarojs/taro'
+import React from 'react'
 import { connect } from '@tarojs/redux'
-import { View, Text } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import { bindActionCreators } from 'redux'
 
 import TodoItem from '../../components/TodoItem/TodoItem'
@@ -23,13 +24,13 @@ const mapDispatchToProps = dispatch => ({
   mapStateToProps,
   mapDispatchToProps
 )
-export default class TodoList extends Component {
+export default class TodoList extends React.Component {
   render () {
-    const { filteredTodos, actions } = this.props
+    const { filteredTodos } = this.props
     console.log(filteredTodos)
     return (
       <View className='todo-list'>
-        {filteredTodos.map((todo, index) =>
+        {filteredTodos.map((todo) =>
           <TodoItem
             key={todo.id}
             todo={todo}

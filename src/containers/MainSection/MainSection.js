@@ -1,5 +1,6 @@
-import Taro, { Component } from '@tarojs/taro'
-import { View, CheckboxGroup, Checkbox, Label } from '@tarojs/components'
+import Taro from '@tarojs/taro'
+import React from 'react'
+import { View } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { bindActionCreators } from 'redux'
 
@@ -24,7 +25,7 @@ const mapDispatchToProps = dispatch => ({
   mapStateToProps,
   mapDispatchToProps
 )
-export default class MainSection extends Component {
+export default class MainSection extends React.Component {
   onCheckClickHandler = () => {
     const { actions } = this.props
     actions.completeAllTodos()
