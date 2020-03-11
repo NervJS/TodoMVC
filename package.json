@@ -11,9 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tarojs/components": "^3.0.0-experimental.3",
-    "@tarojs/runtime": "^3.0.0-experimental.3",
-    "@tarojs/taro": "^3.0.0-experimental.3",
+    "@tarojs/components": "next",
+    "@tarojs/runtime": "next",
+    "@tarojs/taro": "next",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.6.10",
@@ -24,8 +24,9 @@
     "@babel/core": "^7.6.0",
     "@babel/plugin-proposal-class-properties": "^7.7.0",
     "@babel/preset-env": "^7.6.0",
-    "@tarojs/cli": "^3.0.0-experimental.3",
-    "@tarojs/mini-runner": "^3.0.0-experimental.3",
-    "babel-loader": "^8.0.6"
+    "@tarojs/mini-runner": "next",
+    "@tarojs/webpack-runner": "next",
+    "babel-loader": "^8.0.6",
+    "babel-preset-taro": "next"
   }
 }

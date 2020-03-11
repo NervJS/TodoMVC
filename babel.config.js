@@ -1,4 +1,8 @@
 module.exports = {
-  presets: ['@babel/env'],
-  plugins: ['@babel/plugin-proposal-class-properties']
+  presets: [
+    ['taro', {
+      framework: 'vue',
+      ts: false
+    }]
+  ]
 }

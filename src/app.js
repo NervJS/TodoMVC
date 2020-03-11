@@ -5,7 +5,7 @@ const app = new Vue({
     console.log('app onshow', options)
   },
   render(h) {
-    return h('block', this.$slots.default)
+    return h('div', this.$slots.default)
   }
 })
 
