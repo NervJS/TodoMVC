@@ -5,12 +5,12 @@
         <text class='title'>todos</text>
       </view>
       <view class="filters">
-        <text @click="setVisibility('all')" :class="{ selected: visibility == 'all', 'filters-link': true }">All</text>
-        <text @click="setVisibility('active')" :class="{ selected: visibility == 'active', 'filters-link': true }">Active</text>
-        <text @click="setVisibility('completed')" :class="{ selected: visibility == 'completed', 'filters-link': true }">Completed</text>
+        <text @tap="setVisibility('all')" :class="{ selected: visibility == 'all', 'filters-link': true }">All</text>
+        <text @tap="setVisibility('active')" :class="{ selected: visibility == 'active', 'filters-link': true }">Active</text>
+        <text @tap="setVisibility('completed')" :class="{ selected: visibility == 'completed', 'filters-link': true }">Completed</text>
       </view>
       <view class='textinput-wrap'>
-        <text :class="{ 'textinput-wrap-icon': true, 'icon-all-done': allDone && todos.length }" @click="allDone = !allDone">❯</text>
+        <text :class="{ 'textinput-wrap-icon': true, 'icon-all-done': allDone && todos.length }" @tap="allDone = !allDone">❯</text>
         <view class='textinput-wrap-input'>
           <input class="new-todo"
           placeholder="What needs to be done?"
@@ -38,14 +38,14 @@
             <view v-else class='toggle'>
               <text
                 :class="{ label: true, checked: todo.completed }"
-                @click="todo.completed = !todo.completed"
+                @tap="todo.completed = !todo.completed"
               >
               </text>
               <todo-item
                 :todo="todo"
                 :edit="editTodo"
               />
-              <text class='destroy' @click="removeTodo(todo)"></text>
+              <text class='destroy' @tap="removeTodo(todo)"></text>
             </view>
           </view>
         </view>
@@ -55,7 +55,7 @@
       <text class="todo-count">
         <text class="strong">{{ remaining }}</text> {{ remaining | pluralize }} left
       </text>
-      <view class="clear-completed" @click="removeCompleted" v-show="todos.length > remaining" type="">
+      <view class="clear-completed" @tap="removeCompleted" v-show="todos.length > remaining" type="">
         Clear completed
       </view>
     </view>
