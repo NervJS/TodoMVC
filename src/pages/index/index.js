@@ -1,4 +1,4 @@
-import Taro, { Component } from '@tarojs/taro'
+import React, { Component } from 'react'
 import { View } from '@tarojs/components'
 
 import Header from '../../containers/Header/Header'
@@ -7,9 +7,6 @@ import MainSection from '../../containers/MainSection/MainSection'
 import './index.scss'
 
 class Index extends Component {
-  config = {
-    navigationBarTitleText: 'TODO List'
-  }
 
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)

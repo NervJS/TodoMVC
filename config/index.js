@@ -1,5 +1,3 @@
-const wba = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-
 const config = {
   projectName: 'todo-list',
   date: '2018-7-9',
@@ -7,62 +5,15 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   framework: 'react',
-  plugins: {
-    babel: {
-      sourceMap: true,
-      presets: [
-        ['env', {
-          modules: false
-        }]
-      ],
-      plugins: [
-        'transform-class-properties',
-        'transform-decorators-legacy',
-        'transform-object-rest-spread'
-      ]
-    },
-    typescript: {
-      compilerOptions: {
-        allowSyntheticDefaultImports: true,
-        baseUrl: '.',
-        declaration: false,
-        experimentalDecorators: true,
-        jsx: 'react',
-        jsxFactory: 'Nerv.createElement',
-        module: 'commonjs',
-        moduleResolution: 'node',
-        noImplicitAny: false,
-        noUnusedLocals: true,
-        outDir: './dist/',
-        preserveConstEnums: true,
-        removeComments: false,
-        rootDir: '.',
-        sourceMap: true,
-        strictNullChecks: true,
-        target: 'es6'
-      },
-      include: [
-        'src/**/*'
-      ],
-      exclude: [
-        'node_modules'
-      ],
-      compileOnSave: false
-    }
-  },
   defineConstants: {
   },
-  weapp: {
+  mini: {
 
   },
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
     esnextModules: ['taro-ui'],
-    webpackChain (chain) {
-      chain.plugin('analyzer')
-        .use(wba, [])
-    },
     module: {
       postcss: {
         autoprefixer: {

@@ -1,8 +1,8 @@
-import Taro from '@tarojs/taro'
 import React from 'react'
 import { View, Text } from '@tarojs/components'
-import { connect } from '@tarojs/redux'
+import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+
 import TodoTextInput from '../../components/TodoTextInput/TodoTextInput'
 import FilterLink from '../FilterLink/FilterLink'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/TodoFilters'
@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => ({
   () => ({}),
   mapDispatchToProps
 )
-export default class Header extends React.Component {
+class Header extends React.Component {
   onCheckClickHandler = () => {
     console.log('onCheckClickHandler')
     const {actions} = this.props
@@ -64,3 +64,5 @@ export default class Header extends React.Component {
     )
   }
 }
+
+export default Header

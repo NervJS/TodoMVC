@@ -1,4 +1,3 @@
-import Taro from '@tarojs/taro'
 import React from 'react'
 import { View, Checkbox, Label, CheckboxGroup, Text } from '@tarojs/components'
 import classnames from 'classnames'
@@ -49,7 +48,7 @@ export default class TodoItem extends React.Component {
     let element
     if (this.state.editing) {
       element = (
-        <TodoTextInput text={todo.text} editing={this.state.editing} onSave={this.handleSave.bind(this, todo.id)}/>
+        <TodoTextInput text={todo.text} editing={this.state.editing} onSave={this.handleSave.bind(this, todo.id)} />
       )
     } else {
       element = (

@@ -1,7 +1,6 @@
-import Taro from '@tarojs/taro'
 import React from 'react'
 import { View } from '@tarojs/components'
-import { connect } from '@tarojs/redux'
+import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import * as TodoActions from '../../actions'
@@ -25,7 +24,7 @@ const mapDispatchToProps = dispatch => ({
   mapStateToProps,
   mapDispatchToProps
 )
-export default class MainSection extends React.Component {
+class MainSection extends React.Component {
   onCheckClickHandler = () => {
     const { actions } = this.props
     actions.completeAllTodos()
@@ -50,3 +49,5 @@ export default class MainSection extends React.Component {
     )
   }
 }
+
+export default MainSection

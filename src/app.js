@@ -1,6 +1,5 @@
-import Taro from '@tarojs/taro'
 import React from 'react'
-import { Provider } from '@tarojs/redux'
+import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
@@ -14,26 +13,6 @@ const store = createStore(reducer, composeWithDevTools(
 ))
 
 class App extends React.Component {
-  config = {
-    pages: [
-      'pages/index/index'
-    ],
-    window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
-  }
-
-  componentDidMount () {}
-
-  componentDidShow () {}
-
-  componentDidHide () {}
-
-  componentCatchError () {}
-
   render () {
     return (
       <Provider store={store}>
