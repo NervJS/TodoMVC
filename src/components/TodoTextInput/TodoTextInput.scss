@@ -4,7 +4,12 @@
   font-style: italic;
   font-weight: 300;
   color: black;
-  box-shadow: none;
-  background: rgba(0, 0, 0, 0.003);
+  // box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.003);
 }
 
+.input {
+  width: 100%;
+  font-size: 18px;
+  border-radius: 2px;
+}

@@ -1,3 +1,5 @@
+import * as path from "path";
+
 const config = {
   projectName: "todo-list",
   date: "2018-7-9",
@@ -15,12 +17,8 @@ const config = {
     options: {},
   },
   framework: "react",
-  // 配置输出路径，输出到鸿蒙 JS FA 的对应目录下。(支持绝对路径、相对路径)
-  // 例如鸿蒙应用名称为 MyApplication，JS FA 名称为默认的 default，那么 outputRoot 需要设置为：
-  // 'MyApplication/entry/src/main/js/default'
-  // outputRoot: "../../TodoMVCHarmony/entry/src/main/js/default",
   // 配置使用插件
-  // plugins: ["@tarojs/plugin-platform-harmony"],
+  plugins: ["@tarojs/plugin-platform-harmony"],
   mini: {
     // 如果使用开发者工具的预览器（previewer）进行预览的话，需要使用 development 版本的 react-reconciler。
     // 因为 previewer 对长串的压缩文本解析有问题。（真机/远程真机没有此问题）
@@ -46,6 +44,15 @@ const config = {
         },
       },
     },
+  },
+  // harmony 相关配置
+  harmony: {
+    // 【必填】鸿蒙应用的绝对路径
+    projectPath: path.resolve(process.cwd(), "../MyApplication"),
+    // 【可选】HAP 的名称，默认为 'entry'
+    hapName: "entry",
+    // 【可选】JS FA 的名称，默认为 'default'
+    jsFAName: "default",
   },
   h5: {
     publicPath: "/",

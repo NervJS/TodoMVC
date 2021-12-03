@@ -52,7 +52,8 @@ export default class TodoTextInput extends React.Component {
     return (
       <Input
         className={
-          classnames({
+          classnames('input', {
+
             edit: this.props.editing,
             'new-todo': this.props.newTodo
           })}
