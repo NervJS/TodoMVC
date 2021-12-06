@@ -23,14 +23,16 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   border: 1px solid #e6e6e6;
 }
 
 .textinput-wrap-icon {
-  font-size: 44px;
+  width: 40px;
+  height: 40px;
   color: #e6e6e6;
-  padding: 20px 54px 20px 54px;
-  transform: rotate(90deg);
+  margin: 0 20px;
+  transform: rotate(-90deg);
 }
 
 .todo-text-input {

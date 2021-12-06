@@ -12,7 +12,7 @@ export default class TodoTextInput extends React.Component {
 
   handleSubmit = e => {
     console.log('handleSubmit', e)
-    const text = e.target.value.trim()
+    const text = e.detail.value.trim()
     this.props.onSave(text)
     if (this.props.newTodo) {
       this.setState({todoText: ''})
@@ -21,7 +21,7 @@ export default class TodoTextInput extends React.Component {
 
   handleSubmitKey = e => {
     console.log('handleSubmitKey', e)
-    const text = e.target.value.trim()
+    const text = e.detail.value.trim()
     if (e.which === 13) {
       this.props.onSave(text)
       if (this.props.newTodo) {
@@ -33,26 +33,27 @@ export default class TodoTextInput extends React.Component {
   handleChange = e => {
     if (Taro.getEnv() === Taro.ENV_TYPE.WEAPP) return
     console.log('handleChange', e)
-    this.setState({todoText: e.target.value})
+    this.setState({todoText: e.detail.value})
   }
 
   handleInput = e => {
-    console.log('handleChange', e)
-    this.setState({todoText: e.target.value})
+    console.log('handleChange')
+    this.setState({todoText: e.detail.value})
   }
 
   handleBlur = e => {
     console.log('handleBlur', e)
     if (!this.props.newTodo) {
-      this.props.onSave(e.target.value)
+      this.props.onSave(e.detail.value)
     }
   }
 
   render () {
     return (
       <Input
+        id='input1'
         className={
-          classnames('input', {
+          classnames({
 
             edit: this.props.editing,
             'new-todo': this.props.newTodo

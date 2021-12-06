@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Image } from '@tarojs/components'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
@@ -7,6 +7,7 @@ import TodoTextInput from '../../components/TodoTextInput/TodoTextInput'
 import FilterLink from '../FilterLink/FilterLink'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/TodoFilters'
 import * as TodoActions from '../../actions'
+import Arrow from '../../assets/icon_left_arrow.png'
 import './Header.scss'
 
 const FILTER_TITLES = {
@@ -50,7 +51,7 @@ class Header extends React.Component {
           )}
         </View>
         <View className='textinput-wrap'>
-          <Text className='textinput-wrap-icon' onClick={this.onCheckClickHandler}>❯</Text>
+          <Image src={Arrow} className='textinput-wrap-icon' onClick={this.onCheckClickHandler}>❯</Image>
           <View className='textinput-wrap-input'>
             <TodoTextInput
               className='textinput-wrap-input'

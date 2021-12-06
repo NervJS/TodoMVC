@@ -32,13 +32,12 @@ export default class TodoItem extends React.Component {
     if (text.length === 0) {
       this.props.onDeleteTodo(id)
     } else {
-      this.props.onEditTodo(id, text)
+      this.props.onEditTodo(text)
     }
     this.setState({editing: false})
   }
 
   handleCompleteTodo = (todo) => {
-    console.log('handleCompleteTodo')
     this.props.onCompleteTodo(todo.id)
   }
 
@@ -53,9 +52,9 @@ export default class TodoItem extends React.Component {
     } else {
       element = (
         <View className='view'>
-          <CheckboxGroup onChange={this.handleCompleteTodo.bind(this, todo)}>
+          <CheckboxGroup id={`todo-checkbox-${todo.id}`} onChange={this.handleCompleteTodo.bind(this, todo)}>
             <Label className='checkbox-label'>
-              <Checkbox className='checkbox' checked={todo.completed} />
+              <Checkbox groupId={`todo-checkbox-${todo.id}`} className='checkbox' checked={todo.completed} />
               <Text style={{color: '#4d4d4d'}}>{todo.text}</Text>
             </Label>
           </CheckboxGroup>
