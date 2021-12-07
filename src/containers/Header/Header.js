@@ -51,7 +51,7 @@ class Header extends React.Component {
           )}
         </View>
         <View className='textinput-wrap'>
-          <Image src={Arrow} className='textinput-wrap-icon' onClick={this.onCheckClickHandler}>❯</Image>
+          <View onClick={this.onCheckClickHandler}><Image src={Arrow} className='textinput-wrap-icon'></Image></View>
           <View className='textinput-wrap-input'>
             <TodoTextInput
               className='textinput-wrap-input'
