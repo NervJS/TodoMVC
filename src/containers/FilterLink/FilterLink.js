@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import React from 'react'
 import { Text } from '@tarojs/components'
-import classnames from 'classnames'
 
 import { setVisibilityFilter } from '../../actions'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/TodoFilters'
@@ -40,7 +39,7 @@ class FilterLink extends React.Component {
     const active = visibilityFilter === filter
     return (
       <Text
-        className={classnames({'filters-link': true, 'selected': active})}
+        className={active ? 'filters-link-selected' : 'filters-link'}
         onClick={this.onClickHandler}
       >
         {text}
